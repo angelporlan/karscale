@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="bg-deepSpace text-gray-200 dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>{title}</title>
+</head>
+<body class="min-h-screen font-sans antialiased relative selection:bg-neonPurple/30">
+  <nav class="border-b border-white/5 bg-black/40 backdrop-blur-xl sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="/es" class="text-xl font-bold font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-electricCyan drop-shadow-[0_0_8px_rgba(176,38,255,0.4)]">
+            COSMOS::LOG
+          </a>
+        </div>
+        <div class="flex space-x-6 items-center">
+          <a href="/es" class="text-gray-400 hover:text-white transition-colors duration-200 font-mono text-sm px-2">Inicio</a>
+          <a href="/en" class="text-gray-600 hover:text-gray-300 transition-colors duration-200 font-mono text-xs uppercase border border-white/10 rounded px-2 py-0.5">EN</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="relative z-10 w-full max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <slot />
+  </main>
+</body>
+</html>
