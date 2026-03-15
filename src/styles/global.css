@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deepSpace: #050505;
+  --color-neonPurple: #b026ff;
+  --color-electricCyan: #00f0ff;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-deepSpace);
+    color: #e5e7eb;
+  }
+}
