@@ -1,0 +1,64 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  
+  return posts.map(post => {
+    // Si el slug incluye la carpeta del idioma (eg "es/expansion"), la quitamos
+    const [_, ...slugParts] = post.id.split('/');
+    const urlSlug = slugParts.length > 0 ? slugParts.join('/') : post.id;
+
+    return {
+      params: { 
+        lang: post.data.lang,
+        slug: urlSlug 
+      },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const isDeepCosmos = post.data.category === 'Deep Cosmos';
+const isTech = post.data.category === 'Logbook: Tech';
+---
+
+<Layout title={`${post.data.title} | COSMOS`}>
+  <!-- Background Condicionales -->
+  {isDeepCosmos && (
+    <div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+        <!-- SVG Stars pattern for high performance -->
+        <div class="absolute inset-0" style="background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px); background-size: 200px 200px; background-position: 0 0, 100px 100px; opacity: 0.2;"></div>
+        <div class="absolute inset-0 animate-[pulse_8s_ease-in-out_infinite]" style="background-image: radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 2px); background-size: 100px 100px; opacity: 0.15; background-position: 40px 40px;"></div>
+    </div>
+  )}
+
+  <article class={`w-full max-w-3xl mx-auto ${isTech ? 'border-l pl-8 sm:pl-12 py-4 border-electricCyan/40 relative' : ''}`}>
+    {isTech && (
+       <div class="absolute -left-[5px] top-4 w-[10px] h-[30px] bg-electricCyan shadow-[0_0_15px_#00f0ff]"></div>
+    )}
+
+    <header class="mb-14">
+      <div class="flex flex-wrap items-center gap-4 mb-8">
+        <span class={`font-mono text-xs font-bold px-3 py-1 border rounded-full backdrop-blur-md ${isTech ? 'border-electricCyan/50 text-electricCyan bg-electricCyan/10' : 'border-neonPurple/50 text-neonPurple bg-neonPurple/10'} `}>
+          {post.data.category}
+        </span>
+        <time class="text-gray-500 font-mono text-sm tracking-wider">
+          {post.data.pubDate.toLocaleDateString(post.data.lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}
+        </time>
+      </div>
+
+      <h1 class={`text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-100 ${isTech ? 'font-mono tracking-tighter' : ''}`}>
+        {post.data.title}
+      </h1>
+    </header>
+
+    <div class="prose prose-invert prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-electricCyan prose-p:text-gray-300 prose-p:leading-relaxed prose-hr:border-gray-800">
+      <Content />
+    </div>
+  </article>
+</Layout>
