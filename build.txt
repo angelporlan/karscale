@@ -1,0 +1,4 @@
+﻿
+> blog@0.0.1 build
+> astro build
+
