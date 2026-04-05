@@ -3,13 +3,18 @@ import '../styles/global.css';
 
 export interface Props {
   title: string;
+  lang?: string;
 }
 
-const { title } = Astro.props;
+const { title, lang = "es" } = Astro.props;
+const currentLang = lang === "en" ? "en" : "es";
+const alternateLang = currentLang === "es" ? "en" : "es";
+const currentPath = Astro.url.pathname;
+const alternatePath = currentPath.replace(/^\/(es|en)(?=\/|$)/, `/${alternateLang}`);
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-deepSpace text-gray-200 dark">
+<html lang={currentLang} class="bg-deepSpace text-gray-200 dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
@@ -25,14 +30,14 @@ const { title } = Astro.props;
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center gap-10">
-          <a href="/es" class="text-xl font-bold font-heading tracking-tight text-white flex items-center">
+          <a href={`/${currentLang}`} class="text-xl font-bold font-heading tracking-tight text-white flex items-center">
             Kar<span class="text-secondary">scale</span>
           </a>
           <div class="hidden md:flex space-x-8 h-16">
-             <a href="/es" class="text-[10px] font-heading font-bold text-gray-300 uppercase tracking-[0.15em] border-b-2 border-primary py-5 inline-flex items-center h-full pt-6">Logbook</a>
-             <a href="/es/kardashov" class="text-[10px] font-heading font-bold text-gray-500 hover:text-gray-300 uppercase tracking-[0.15em] py-5 inline-flex items-center h-full pt-6 transition-colors border-b-2 border-transparent hover:border-white/10">Kardashov</a>
-             <a href="/es/silencio" class="text-[10px] font-heading font-bold text-gray-500 hover:text-gray-300 uppercase tracking-[0.15em] py-5 inline-flex items-center h-full pt-6 transition-colors border-b-2 border-transparent hover:border-white/10">Silencio</a>
-             <a href="/es/cosmos" class="text-[10px] font-heading font-bold text-gray-500 hover:text-gray-300 uppercase tracking-[0.15em] py-5 inline-flex items-center h-full pt-6 transition-colors border-b-2 border-transparent hover:border-white/10">Cosmos</a>
+             <a href={`/${currentLang}`} class="text-[10px] font-heading font-bold text-gray-300 uppercase tracking-[0.15em] border-b-2 border-primary py-5 inline-flex items-center h-full pt-6">Logbook</a>
+             <a href={`/${currentLang}/kardashov`} class="text-[10px] font-heading font-bold text-gray-500 hover:text-gray-300 uppercase tracking-[0.15em] py-5 inline-flex items-center h-full pt-6 transition-colors border-b-2 border-transparent hover:border-white/10">Kardashov</a>
+             <a href={`/${currentLang}/silencio`} class="text-[10px] font-heading font-bold text-gray-500 hover:text-gray-300 uppercase tracking-[0.15em] py-5 inline-flex items-center h-full pt-6 transition-colors border-b-2 border-transparent hover:border-white/10">Silencio</a>
+             <a href={`/${currentLang}/cosmos`} class="text-[10px] font-heading font-bold text-gray-500 hover:text-gray-300 uppercase tracking-[0.15em] py-5 inline-flex items-center h-full pt-6 transition-colors border-b-2 border-transparent hover:border-white/10">Cosmos</a>
           </div>
         </div>
         <div class="flex items-center gap-4 h-16">
@@ -40,12 +45,12 @@ const { title } = Astro.props;
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
-            <input type="text" placeholder="Buscar en la escala..." class="bg-[#111] border border-white/5 rounded pl-10 pr-4 py-2.5 text-[11px] text-gray-300 font-body focus:outline-none focus:border-white/10 w-64 lg:w-80 transition-colors placeholder-gray-600">
+            <input type="text" placeholder={currentLang === "es" ? "Buscar en la escala..." : "Search the scale..."} class="bg-[#111] border border-white/5 rounded pl-10 pr-4 py-2.5 text-[11px] text-gray-300 font-body focus:outline-none focus:border-white/10 w-64 lg:w-80 transition-colors placeholder-gray-600">
           </div>
-          <div class="flex items-center justify-center text-gray-500 hover:text-gray-300 transition-colors cursor-pointer pl-6 border-l border-white/5 h-full">
+          <a href={alternatePath} class="flex items-center justify-center text-gray-500 hover:text-gray-300 transition-colors cursor-pointer pl-6 border-l border-white/5 h-full">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span class="text-[10px] font-heading font-bold tracking-[0.1em]">ES/EN</span>
-          </div>
+            <span class="text-[10px] font-heading font-bold tracking-[0.1em]">{currentLang.toUpperCase()}/{alternateLang.toUpperCase()}</span>
+          </a>
         </div>
       </div>
     </div>
@@ -58,7 +63,7 @@ const { title } = Astro.props;
   <footer class="border-t border-white/5 py-10 mt-auto bg-[#050505] relative z-10">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col xl:flex-row items-center justify-between gap-8 xl:gap-0">
       <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
-        <a href="/es" class="text-xl font-bold font-heading tracking-tight text-white flex items-center">
+        <a href={`/${currentLang}`} class="text-xl font-bold font-heading tracking-tight text-white flex items-center">
             Kar<span class="text-secondary">scale</span>
         </a>
         <span class="text-gray-600 text-[9px] font-heading tracking-[0.2em] font-bold md:ml-4">
@@ -69,10 +74,10 @@ const { title } = Astro.props;
       <div class="flex flex-wrap items-center justify-center gap-6 xl:gap-8 text-[10px] font-heading font-bold text-gray-500 uppercase tracking-widest">
         <a href="#" class="hover:text-white transition-colors">PRIVACY</a>
         <a href="#" class="hover:text-white transition-colors">TERMS</a>
-        <a href="/es" class="hover:text-white transition-colors">LOGBOOK</a>
-        <a href="/es/kardashov" class="hover:text-white transition-colors">KARDASHOV</a>
-        <a href="/es/silencio" class="hover:text-white transition-colors">SILENCIO</a>
-        <a href="/es/cosmos" class="hover:text-white transition-colors">COSMOS</a>
+        <a href={`/${currentLang}`} class="hover:text-white transition-colors">LOGBOOK</a>
+        <a href={`/${currentLang}/kardashov`} class="hover:text-white transition-colors">KARDASHOV</a>
+        <a href={`/${currentLang}/silencio`} class="hover:text-white transition-colors">SILENCIO</a>
+        <a href={`/${currentLang}/cosmos`} class="hover:text-white transition-colors">COSMOS</a>
       </div>
 
       <div class="flex items-center gap-5 text-gray-500">

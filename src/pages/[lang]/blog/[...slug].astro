@@ -21,13 +21,14 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const lang = post.data.lang;
 const { Content } = await render(post);
 
 const isDeepCosmos = post.data.category === 'Deep Cosmos';
 const isTech = post.data.category === 'Logbook: Tech';
 ---
 
-<Layout title={`${post.data.title} | COSMOS`}>
+<Layout title={`${post.data.title} | COSMOS`} lang={lang}>
   <!-- Background Condicionales -->
   {isDeepCosmos && (
     <div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
