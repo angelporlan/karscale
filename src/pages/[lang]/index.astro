@@ -1,70 +1,418 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
 
+// Declaramos las rutas dinámicas para los idiomas
 export function getStaticPaths() {
-  return [
-    { params: { lang: 'es' } },
-    { params: { lang: 'en' } },
-  ];
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
 
 const { lang } = Astro.params;
 
-const posts = await getCollection('blog', ({ data }) => {
-  return data.lang === lang;
-});
+const posts = [
+  {
+    id: "estructuras-dyson",
+    data: {
+      category: "COSMOS",
+      pubDate: new Date("2024-08-24"),
+      title: "Estructuras de Dyson: Anomalías en la Constelación de Cygnus",
+      description:
+        "Recientes fluctuaciones lumínicas sugieren la presencia de mega-estructuras no naturales en sistemas estelares distantes. El análisis espectral...",
+      buttonText: "LEER TRANSMISIÓN",
+      imageUrl:
+        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop",
+    },
+  },
+  {
+    id: "singularidad-silenciosa",
+    data: {
+      category: "TECH",
+      pubDate: new Date("2024-08-11"),
+      title: "La Singularidad Silenciosa: IA en Civilizaciones Tipo II",
+      description:
+        "¿Es la inteligencia artificial el cuello de botella biológico o el catalizador definitivo hacia la expansión interestelar? Exploramos la paradoja de...",
+      buttonText: "ANALIZAR DATOS",
+      imageUrl:
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+    },
+  },
+  {
+    id: "motores-estelares",
+    data: {
+      category: "COSMOS",
+      pubDate: new Date("2024-08-12"),
+      title: "Motores Estelares: Desplazando Sistemas Completos",
+      description:
+        "Conceptualización física de los motores Shkadov. Cómo una civilización avanzada podría navegar su estrella anfitriona a través de la galaxia para evitar...",
+      buttonText: "VER SIMULACIÓN",
+      imageUrl:
+        "https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=800&auto=format&fit=crop",
+    },
+  },
+];
 
-posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const esDateOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+const esDateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+};
 ---
 
 <Layout title={`Inicio | ${lang?.toUpperCase()}`}>
-  <header class="mb-20 mt-10">
-    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500">
-      Últimos Registros
-    </h1>
-    <p class="text-xl text-gray-400 font-light">
-      Datos recuperados sobre civilizaciones futuras, estructuras megadimensionales y exploración profunda.
+  <section
+    class="grid lg:grid-cols-2 gap-12 lg:gap-8 min-h-[70vh] items-center py-20 relative"
+  >
+    <div class="flex flex-col items-start z-10 w-full max-w-xl">
+      <div class="mb-8">
+        <span
+          class="px-3 py-1.5 border border-white/20 bg-white/5 text-[9px] uppercase tracking-[0.2em] font-heading font-bold text-gray-300 backdrop-blur-md"
+        >
+          PROTOCOLO KARDASHEV INICIADO
+        </span>
+      </div>
+      <h1
+        class="text-5xl md:text-7xl lg:text-[80px] font-heading font-bold leading-[1.05] mb-8 text-white tracking-tight"
+      >
+        Karscale.<br />Midiendo el<br /><span
+          class="text-secondary drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+          >progreso cósmico.</span
+        >
+      </h1>
+      <p
+        class="text-gray-400 font-body text-sm md:text-base max-w-md leading-relaxed mb-12"
+      >
+        Una terminal de investigación dedicada a la clasificación de
+        civilizaciones y el análisis de la tecno-firma universal a través de la
+        escala de Nikolai Kardashev.
+      </p>
+      <div class="flex flex-wrap gap-4 w-full sm:w-auto">
+        <a
+          href="#archives"
+          class="bg-primary hover:bg-primary/90 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors w-full sm:w-auto text-center shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+        >
+          ACCEDER A LOS ARCHIVOS
+        </a>
+        <a
+          href="#scale"
+          class="border border-white/20 hover:border-white/40 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors w-full sm:w-auto text-center hover:bg-white/5"
+        >
+          MANUAL DE ESCALA
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="relative w-full h-[500px] flex items-center justify-center lg:justify-end z-10 hidden sm:flex"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.1)_0%,transparent_60%)]"
+      >
+      </div>
+
+      <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-80"
+      >
+        <div
+          class="absolute w-6 h-6 bg-secondary rounded-full shadow-[0_0_40px_rgba(6,182,212,1)] z-10"
+        >
+        </div>
+
+        <div
+          class="gsap-orbit absolute inset-0 m-auto w-[180px] h-[180px] border border-white/10 rounded-full"
+          data-duration="12"
+        >
+          <div
+            class="absolute top-0 left-1/2 w-2 h-2 bg-gray-300 rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(209,213,219,0.8)]"
+          >
+          </div>
+        </div>
+
+        <div
+          class="gsap-orbit absolute inset-0 m-auto w-[280px] h-[280px] border border-white/10 rounded-full"
+          data-duration="24"
+        >
+          <div
+            class="absolute top-0 left-1/2 w-3.5 h-3.5 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_rgba(139,92,246,0.9)]"
+          >
+          </div>
+        </div>
+
+        <div
+          class="gsap-orbit absolute inset-0 m-auto w-[380px] h-[380px] border border-white/5 rounded-full"
+          data-duration="36"
+        >
+          <div
+            class="absolute top-0 left-1/2 w-2.5 h-2.5 bg-blue-400 rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_rgba(96,165,250,0.8)]"
+          >
+          </div>
+        </div>
+
+        <div
+          class="gsap-orbit absolute inset-0 m-auto w-[500px] h-[500px] border border-white/5 border-dashed rounded-full"
+          data-duration="55"
+        >
+          <div
+            class="absolute top-0 left-1/2 w-2 h-2 bg-red-400 rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_rgba(248,113,113,0.8)]"
+          >
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="display: none;"
+        class="w-full max-w-[380px] bg-[#0A0A0A]/80 border border-white/10 p-10 relative shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl z-20"
+      >
+        <div
+          class="text-[9px] text-secondary font-heading font-bold tracking-[0.25em] uppercase mb-14 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]"
+        >
+          REAL-TIME TELEMETRY
+        </div>
+
+        <div
+          class="flex flex-col items-center justify-center border-y border-white/5 py-14 mb-10 relative"
+        >
+          <div
+            class="absolute left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent top-0"
+          >
+          </div>
+          <div
+            class="absolute left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent bottom-0"
+          >
+          </div>
+
+          <div
+            class="text-[9px] text-gray-500 font-heading tracking-[0.2em] uppercase mb-4"
+          >
+            CIVILIZATION STATUS
+          </div>
+          <div
+            class="text-6xl font-heading font-bold text-white mb-3 tracking-tighter"
+          >
+            TYPE II
+          </div>
+          <div
+            class="text-[10px] font-heading text-primary font-bold tracking-[0.25em] uppercase"
+          >
+            STELLAR HARVESTING
+          </div>
+        </div>
+
+        <div
+          class="flex justify-between items-center text-[9px] text-gray-500 font-heading tracking-[0.1em] uppercase"
+        >
+          <span>ENERGY: 4.0×10²⁶ W</span>
+          <span>MATTER: 1.0×10¹⁰ kg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="archives"
+    class="py-24 border-t border-white/5 bg-gradient-to-b from-[#0A0A0A] to-transparent"
+  >
+    <div
+      class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 gap-8"
+    >
+      <div class="border-l-2 border-white pl-5">
+        <h2
+          class="text-3xl md:text-4xl font-heading font-bold text-white tracking-wide uppercase"
+        >
+          LOGBOOK DE INVESTIGACIÓN
+        </h2>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+        <button
+          class="text-[10px] sm:text-xs font-heading font-bold text-gray-300 tracking-widest uppercase bg-white/10 px-5 py-2.5 border border-white/10"
+          >TODOS</button
+        >
+        <button
+          class="text-[10px] sm:text-xs font-heading font-bold text-gray-500 hover:text-gray-300 tracking-widest uppercase transition-colors px-2"
+          >COSMOS</button
+        >
+        <button
+          class="text-[10px] sm:text-xs font-heading font-bold text-gray-500 hover:text-gray-300 tracking-widest uppercase transition-colors px-2"
+          >TECNOLOGÍA</button
+        >
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      {
+        posts.map((post) => {
+          const isTech = post.data.category === "TECH";
+          const categoryColor = isTech ? "text-secondary" : "text-primary";
+          const borderColorHover = isTech
+            ? "hover:border-secondary/50"
+            : "hover:border-primary/50";
+          const lineBg = isTech ? "bg-secondary" : "bg-primary";
+          const btnHover = isTech
+            ? "group-hover:text-secondary"
+            : "group-hover:text-primary";
+
+          return (
+            <article
+              class={`flex flex-col border border-white/10 bg-[#0A0A0A] group transition-all duration-500 ${borderColorHover}`}
+            >
+              <div class="h-48 w-full border-b border-white/5 relative overflow-hidden flex items-center justify-center bg-black">
+                <img
+                  src={post.data.imageUrl}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700"
+                />
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                {/* Decorative tech lines */}
+                <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                <div class="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+              </div>
+
+              <div class="p-8 flex flex-col flex-1 relative">
+                <div
+                  class={`absolute top-0 left-0 w-full h-[2px] ${lineBg} transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500`}
+                />
+
+                <div class="flex items-center justify-between mb-5">
+                  <span
+                    class={`text-[9px] font-heading font-bold uppercase tracking-[0.15em] ${categoryColor}`}
+                  >
+                    {post.data.category}
+                  </span>
+                  <span class="text-[9px] font-mono text-gray-500 tracking-[0.1em]">
+                    {post.data.pubDate
+                      .toLocaleDateString(
+                        lang === "es" ? "es-ES" : "en-US",
+                        esDateOptions,
+                      )
+                      .replace(/\//g, ".")}
+                  </span>
+                </div>
+
+                <h3 class="text-xl font-heading font-bold text-gray-100 mb-4 tracking-tight leading-tight group-hover:text-white transition-colors">
+                  {post.data.title}
+                </h3>
+
+                <p class="text-sm font-body text-gray-400 mb-8 line-clamp-3 leading-[1.7] flex-1">
+                  {post.data.description}
+                </p>
+
+                <a
+                  href={`/${lang}/blog/${post.id}`}
+                  class={`text-[9px] font-heading font-bold text-white uppercase tracking-[0.2em] flex items-center ${btnHover} transition-colors mt-auto`}
+                >
+                  {post.data.buttonText}{" "}
+                  <span class="ml-2 transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+
+    <div class="flex justify-center items-center gap-2">
+      <button
+        class="w-10 h-10 flex items-center justify-center border border-white/5 text-gray-500 hover:text-white transition-colors text-xs"
+        >&lt;</button
+      >
+      <button
+        class="w-10 h-10 flex items-center justify-center border border-primary text-primary font-heading tracking-widest text-xs"
+        >01</button
+      >
+      <button
+        class="w-10 h-10 flex items-center justify-center border border-transparent text-gray-500 hover:text-white font-heading tracking-widest text-xs transition-colors"
+        >02</button
+      >
+      <button
+        class="w-10 h-10 flex items-center justify-center border border-transparent text-gray-500 hover:text-white font-heading tracking-widest text-xs transition-colors"
+        >03</button
+      >
+      <span class="text-gray-500 px-2 text-xs">...</span>
+      <button
+        class="w-10 h-10 flex items-center justify-center border border-transparent text-gray-500 hover:text-white font-heading tracking-widest text-xs transition-colors"
+        >12</button
+      >
+      <button
+        class="w-10 h-10 flex items-center justify-center border border-white/5 text-gray-500 hover:text-white transition-colors text-xs"
+        >&gt;</button
+      >
+    </div>
+  </section>
+
+  <section
+    class="py-32 border-t border-white/5 flex flex-col items-center justify-center text-center relative overflow-hidden bg-gradient-to-b from-transparent to-[#0A0A0A]"
+  >
+    <div
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-1/2 bg-primary/5 blur-[100px] pointer-events-none"
+    >
+    </div>
+
+    <div class="mb-8 p-4 border border-white/10 bg-white/5 rounded-sm">
+      <svg
+        class="w-5 h-5 text-gray-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+        ></path></svg
+      >
+    </div>
+
+    <h2
+      class="text-2xl md:text-3xl font-heading font-bold text-white uppercase tracking-widest mb-6"
+    >
+      SUSCRIBIRSE AL FEED DE INVESTIGACIÓN
+    </h2>
+    <p class="text-gray-400 font-body text-sm max-w-lg mb-10 leading-relaxed">
+      Reciba actualizaciones semanales sobre anomalías astronómicas y progreso
+      en la escala Kardashev directamente en su terminal.
     </p>
-  </header>
 
-  <div class="grid gap-8 relative">
-    <!-- Línea decorativa del timeline -->
-    <div class="absolute left-6 top-0 bottom-0 w-px bg-white/5 md:block hidden"></div>
-    
-    {posts.map(post => {
-      // Extraemos el slug correcto sin el prefijo del idioma de la carpeta
-      const slugParts = post.id.split('/');
-      const isNested = slugParts.length > 1; // e.g. "es/my-post"
-      const urlSlug = isNested ? slugParts.slice(1).join('/') : post.id;
-
-      return (
-        <article class="relative p-6 md:p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 group ml-0 md:ml-12 hover:border-white/10 hover:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-          <!-- Punto en el timeline -->
-          <div class="absolute -left-[53px] top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-neonPurple shadow-[0_0_10px_#b026ff] md:block hidden group-hover:scale-150 transition-transform"></div>
-
-          <div class="flex items-center gap-4 mb-4">
-            <span class="px-3 py-1 text-xs font-mono font-medium tracking-wide rounded-full border border-electricCyan/30 text-electricCyan bg-electricCyan/10 backdrop-blur-sm">
-              {post.data.category}
-            </span>
-            <time class="text-sm text-gray-500 font-mono">
-              {post.data.pubDate.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', esDateOptions)}
-            </time>
-          </div>
-          <a href={`/${lang}/blog/${urlSlug}`} class="block outline-none">
-            <h2 class="text-3xl font-bold mb-3 text-gray-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300">
-              {post.data.title}
-            </h2>
-          </a>
-          <div class="flex flex-wrap gap-2 mt-4">
-            {post.data.tags.map(tag => (
-              <span class="text-xs font-mono text-gray-600 bg-black/50 px-2 py-1 rounded">#{tag}</span>
-            ))}
-          </div>
-        </article>
-      );
-    })}
-  </div>
+    <div class="flex w-full max-w-xl group relative z-10">
+      <input
+        type="email"
+        placeholder="DIRECCIÓN DE ENLACE..."
+        class="flex-1 bg-[#111] border border-white/10 px-6 py-4 text-xs text-gray-300 font-body focus:outline-none focus:border-white/30 uppercase tracking-widest placeholder-gray-600 transition-colors"
+      />
+      <button
+        class="bg-primary hover:bg-primary/80 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors"
+      >
+        CONECTAR
+      </button>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+
+  const initOrbits = () => {
+    const orbits = document.querySelectorAll(".gsap-orbit");
+    
+    orbits.forEach((orbit) => {
+      const duration = parseFloat(orbit.getAttribute("data-duration") || "20");
+      
+      // Matamos cualquier animación previa por si acaso
+      gsap.killTweensOf(orbit);
+      
+      // Aplicamos la rotación
+      gsap.to(orbit, {
+        rotation: 360,
+        duration: duration,
+        repeat: -1,
+        ease: "none",
+        transformOrigin: "center center",
+      });
+    });
+  };
+
+  // Ejecutamos inmediatamente (los scripts de Astro corren tras el DOM)
+  initOrbits();
+
+  // Soporte para View Transitions de Astro si se añaden después
+  document.addEventListener('astro:page-load', initOrbits);
+</script>
