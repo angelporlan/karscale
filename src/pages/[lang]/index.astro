@@ -7,6 +7,45 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
+const currentLang = lang === "en" ? "en" : "es";
+const copy = {
+  es: {
+    title: "Inicio",
+    protocol: "PROTOCOLO KARDASHEV INICIADO",
+    heroLead: "Midiendo el",
+    heroHighlight: "progreso cósmico.",
+    heroText:
+      "Una terminal de investigación dedicada a la clasificación de civilizaciones y el análisis de la tecno-firma universal a través de la escala de Nikolai Kardashev.",
+    archiveCta: "ACCEDER A LOS ARCHIVOS",
+    scaleCta: "MANUAL DE ESCALA",
+    archivesTitle: "LOGBOOK DE INVESTIGACIÓN",
+    filterAll: "TODOS",
+    filterTech: "TECNOLOGÍA",
+    subscribeTitle: "SUSCRIBIRSE AL FEED DE INVESTIGACIÓN",
+    subscribeText:
+      "Reciba actualizaciones semanales sobre anomalías astronómicas y progreso en la escala Kardashev directamente en su terminal.",
+    emailPlaceholder: "DIRECCIÓN DE ENLACE...",
+    connect: "CONECTAR",
+  },
+  en: {
+    title: "Home",
+    protocol: "KARDASHEV PROTOCOL INITIALIZED",
+    heroLead: "Measuring",
+    heroHighlight: "cosmic progress.",
+    heroText:
+      "A research terminal focused on classifying civilizations and analyzing universal technosignatures through Nikolai Kardashev's scale.",
+    archiveCta: "ACCESS ARCHIVES",
+    scaleCta: "SCALE MANUAL",
+    archivesTitle: "RESEARCH LOGBOOK",
+    filterAll: "ALL",
+    filterTech: "TECH",
+    subscribeTitle: "SUBSCRIBE TO THE RESEARCH FEED",
+    subscribeText:
+      "Receive weekly updates on astronomical anomalies and progress along the Kardashev scale directly in your terminal.",
+    emailPlaceholder: "LINK ADDRESS...",
+    connect: "CONNECT",
+  },
+}[currentLang];
 
 const posts = [
   {
@@ -57,27 +96,30 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
 };
 ---
 
-<Layout title={`Inicio | ${lang?.toUpperCase()}`} lang={lang}>
+<Layout title={`${copy.title} | ${lang?.toUpperCase()}`} lang={lang}>
   <section
     class="grid lg:grid-cols-2 gap-12 lg:gap-8 min-h-[70vh] items-center py-20 relative"
   >
     <div class="flex flex-col items-start z-10 w-full max-w-xl">
       <div class="mb-8">
         <span
+          id="home-protocol"
           class="px-3 py-1.5 border border-white/20 bg-white/5 text-[9px] uppercase tracking-[0.2em] font-heading font-bold text-gray-300 backdrop-blur-md"
         >
-          PROTOCOLO KARDASHEV INICIADO
+          {copy.protocol}
         </span>
       </div>
       <h1
+        id="home-hero-title"
         class="text-5xl md:text-7xl lg:text-[80px] font-heading font-bold leading-[1.05] mb-8 text-white tracking-tight"
       >
-        Karscale.<br />Midiendo el<br /><span
+        Karscale.<br />{copy.heroLead}<br /><span
           class="text-secondary drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]"
           >progreso cósmico.</span
         >
       </h1>
       <p
+        id="home-hero-text"
         class="text-gray-400 font-body text-sm md:text-base max-w-md leading-relaxed mb-12"
       >
         Una terminal de investigación dedicada a la clasificación de
@@ -86,12 +128,14 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
       </p>
       <div class="flex flex-wrap gap-4 w-full sm:w-auto">
         <a
+          id="home-archives-cta"
           href="#archives"
           class="bg-primary hover:bg-primary/90 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors w-full sm:w-auto text-center shadow-[0_0_20px_rgba(139,92,246,0.3)]"
         >
           ACCEDER A LOS ARCHIVOS
         </a>
         <a
+          id="home-scale-cta"
           href="#scale"
           class="border border-white/20 hover:border-white/40 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors w-full sm:w-auto text-center hover:bg-white/5"
         >
@@ -266,6 +310,7 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
     >
       <div class="border-l-2 border-white pl-5">
         <h2
+          id="home-archives-title"
           class="text-3xl md:text-4xl font-heading font-bold text-white tracking-wide uppercase"
         >
           LOGBOOK DE INVESTIGACIÓN
@@ -273,10 +318,12 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
       </div>
       <div class="flex flex-wrap items-center gap-4 sm:gap-6">
         <button
+          id="home-filter-all"
           class="text-[10px] sm:text-xs font-heading font-bold text-gray-300 tracking-widest uppercase bg-white/10 px-5 py-2.5 border border-white/10"
           >TODOS</button
         >
         <button
+          id="home-filter-tech"
           class="text-[10px] sm:text-xs font-heading font-bold text-gray-500 hover:text-gray-300 tracking-widest uppercase transition-colors px-2"
           >COSMOS</button
         >
@@ -414,22 +461,25 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
     </div>
 
     <h2
+      id="home-subscribe-title"
       class="text-2xl md:text-3xl font-heading font-bold text-white uppercase tracking-widest mb-6"
     >
       SUSCRIBIRSE AL FEED DE INVESTIGACIÓN
     </h2>
-    <p class="text-gray-400 font-body text-sm max-w-lg mb-10 leading-relaxed">
+    <p id="home-subscribe-text" class="text-gray-400 font-body text-sm max-w-lg mb-10 leading-relaxed">
       Reciba actualizaciones semanales sobre anomalías astronómicas y progreso
       en la escala Kardashev directamente en su terminal.
     </p>
 
     <div class="flex w-full max-w-xl group relative z-10">
       <input
+        id="home-email-input"
         type="email"
         placeholder="DIRECCIÓN DE ENLACE..."
         class="flex-1 bg-[#111] border border-white/10 px-6 py-4 text-xs text-gray-300 font-body focus:outline-none focus:border-white/30 uppercase tracking-widest placeholder-gray-600 transition-colors"
       />
       <button
+        id="home-connect-button"
         class="bg-primary hover:bg-primary/80 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors"
       >
         CONECTAR
@@ -439,3 +489,4 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
 </Layout>
 
 <script src="../../scripts/home-orbits.ts"></script>
+<script src="../../scripts/home-copy.ts"></script>
