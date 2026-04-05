@@ -26,6 +26,15 @@ const { Content } = await render(post);
 
 const isDeepCosmos = post.data.category === 'Deep Cosmos';
 const isTech = post.data.category === 'Logbook: Tech';
+const isGreatSilence = post.data.category === 'El Gran Silencio';
+const articleClass = isTech
+  ? 'border-l pl-8 sm:pl-12 py-4 border-electricCyan/40 relative'
+  : isGreatSilence
+    ? 'relative overflow-hidden rounded-[36px] border border-white/10 bg-[linear-gradient(180deg,rgba(10,10,10,0.92),rgba(4,6,10,0.98))] px-6 py-8 sm:px-10 sm:py-10 shadow-[0_30px_90px_rgba(0,0,0,0.45)]'
+    : 'relative';
+const proseClass = isGreatSilence
+  ? 'blog-prose blog-prose-silence prose prose-invert prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-electricCyan prose-p:text-gray-300 prose-p:leading-relaxed prose-hr:border-gray-800'
+  : 'blog-prose prose prose-invert prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-electricCyan prose-p:text-gray-300 prose-p:leading-relaxed prose-hr:border-gray-800';
 ---
 
 <Layout title={`${post.data.title} | COSMOS`} lang={lang}>
@@ -38,9 +47,23 @@ const isTech = post.data.category === 'Logbook: Tech';
     </div>
   )}
 
-  <article class={`w-full max-w-3xl mx-auto ${isTech ? 'border-l pl-8 sm:pl-12 py-4 border-electricCyan/40 relative' : ''}`}>
+  {isGreatSilence && (
+    <div class="fixed inset-0 z-[-1] pointer-events-none opacity-60">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(8,145,178,0.12),transparent_25%),radial-gradient(circle_at_70%_20%,rgba(244,63,94,0.10),transparent_22%),linear-gradient(180deg,#030303,#020409_55%,#010204)]"></div>
+      <div class="absolute inset-0 opacity-25" style="background-image:radial-gradient(white,rgba(255,255,255,0.15) 1px,transparent 2px);background-size:140px 140px;background-position:0 0,70px 70px;"></div>
+    </div>
+  )}
+
+  <article class={`w-full ${isGreatSilence ? 'max-w-5xl' : 'max-w-3xl'} mx-auto ${articleClass}`}>
     {isTech && (
        <div class="absolute -left-[5px] top-4 w-[10px] h-[30px] bg-electricCyan shadow-[0_0_15px_#00f0ff]"></div>
+    )}
+
+    {isGreatSilence && (
+      <>
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-px bg-gradient-to-b from-transparent via-rose-300/20 to-transparent"></div>
+      </>
     )}
 
     <header class="mb-14">
@@ -53,12 +76,12 @@ const isTech = post.data.category === 'Logbook: Tech';
         </time>
       </div>
 
-      <h1 class={`text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-100 ${isTech ? 'font-mono tracking-tighter' : ''}`}>
+      <h1 class={`text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-100 ${isTech ? 'font-mono tracking-tighter' : ''} ${isGreatSilence ? 'max-w-4xl text-balance drop-shadow-[3px_3px_0_rgba(96,165,250,0.25)]' : ''}`}>
         {post.data.title}
       </h1>
     </header>
 
-    <div class="prose prose-invert prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-electricCyan prose-p:text-gray-300 prose-p:leading-relaxed prose-hr:border-gray-800">
+    <div class={proseClass}>
       <Content />
     </div>
   </article>
