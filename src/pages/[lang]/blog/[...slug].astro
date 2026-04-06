@@ -1,18 +1,16 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import { formatTaxonomyLabel, getBlogTaxonomyFromId } from '../../../utils/blog';
+import { formatTaxonomyLabel, getBlogTaxonomyFromId, getBlogUrlPath } from '../../../utils/blog';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   
   return posts.map(post => {
-    const { slug } = getBlogTaxonomyFromId(post.id);
-
     return {
       params: { 
         lang: post.data.lang,
-        slug
+        slug: getBlogUrlPath(post.id)
       },
       props: { post },
     };

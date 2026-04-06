@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
-import { formatTaxonomyLabel, getBlogTaxonomyFromId } from "../../utils/blog";
+import { formatTaxonomyLabel, getBlogTaxonomyFromId, getBlogUrlPath } from "../../utils/blog";
 
 // Declaramos las rutas dinámicas para los idiomas
 export function getStaticPaths() {
@@ -63,6 +63,7 @@ const posts = allPosts
     return {
       ...post,
       slug: taxonomy.slug,
+      urlPath: getBlogUrlPath(post.id),
       category: taxonomy.category,
       subcategory: taxonomy.subcategory,
       categoryLabel: formatTaxonomyLabel(taxonomy.category),
@@ -381,7 +382,7 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
                 </p>
 
                 <a
-                  href={`/${lang}/blog/${post.slug}`}
+                  href={`/${lang}/blog/${post.urlPath}`}
                   class={`text-[9px] font-heading font-bold text-white uppercase tracking-[0.2em] flex items-center ${btnHover} transition-colors mt-auto`}
                 >
                   {post.data.buttonText}{" "}

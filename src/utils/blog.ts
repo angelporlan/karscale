@@ -48,3 +48,8 @@ export function formatTaxonomyLabel(value: string): string {
     .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
     .join(' ');
 }
+
+export function getBlogUrlPath(id: string): string {
+  const { category, subcategory, slug } = getBlogTaxonomyFromId(id);
+  return `${category}/${subcategory}/${slug}`;
+}
