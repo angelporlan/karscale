@@ -1,13 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
+import { getCollection } from "astro:content";
+
 // Declaramos las rutas dinámicas para los idiomas
 export function getStaticPaths() {
   return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
 
 const { lang } = Astro.params;
-const currentLang = lang === "en" ? "en" : "es";
+const currentLang = (lang === "en" ? "en" : "es") as "en" | "es";
 const copy = {
   es: {
     title: "Inicio",
@@ -47,60 +49,22 @@ const copy = {
   },
 }[currentLang];
 
-const posts = [
-  {
-    id: "estructuras-dyson",
-    data: {
-      category: "COSMOS",
-      pubDate: new Date("2024-08-24"),
-      title: "Estructuras de Dyson: Anomalías en la Constelación de Cygnus",
-      description:
-        "Recientes fluctuaciones lumínicas sugieren la presencia de mega-estructuras no naturales en sistemas estelares distantes. El análisis espectral...",
-      buttonText: "LEER TRANSMISIÓN",
-      imageUrl:
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop",
-    },
-  },
-  {
-    id: "singularidad-silenciosa",
-    data: {
-      category: "TECH",
-      pubDate: new Date("2024-08-11"),
-      title: "La Singularidad Silenciosa: IA en Civilizaciones Tipo II",
-      description:
-        "¿Es la inteligencia artificial el cuello de botella biológico o el catalizador definitivo hacia la expansión interestelar? Exploramos la paradoja de...",
-      buttonText: "ANALIZAR DATOS",
-      imageUrl:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
-    },
-  },
-  {
-    id: "bosque-oscuro-civilizaciones-inteligentes",
-    data: {
-      category: "COSMOS",
-      pubDate: new Date("2026-04-05"),
-      title: "El Bosque Oscuro: ¿Por qué sería una mala idea buscar civilizaciones inteligentes?",
-      description:
-        "La hipótesis del Bosque Oscuro sugiere que anunciar nuestra presencia al cosmos podría ser una imprudencia estratégica en un universo donde nadie confía en nadie...",
-      buttonText: "LEER ANÁLISIS",
-      imageUrl:
-        "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop",
-    },
-  },
-  {
-    id: "motores-estelares",
-    data: {
-      category: "COSMOS",
-      pubDate: new Date("2024-08-12"),
-      title: "Motores Estelares: Desplazando Sistemas Completos",
-      description:
-        "Conceptualización física de los motores Shkadov. Cómo una civilización avanzada podría navegar su estrella anfitriona a través de la galaxia para evitar...",
-      buttonText: "VER SIMULACIÓN",
-      imageUrl:
-        "https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=800&auto=format&fit=crop",
-    },
-  },
-];
+const allPosts = await getCollection("blog", ({ data }) => {
+  return data.lang === currentLang;
+});
+
+const posts = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .map((post) => {
+    // Extract slug from post.id (e.g. "en/my-post" -> "my-post")
+    const parts = post.id.split("/");
+    const slug = parts.length > 1 ? parts.slice(1).join("/") : post.id;
+    return {
+      ...post,
+      slug,
+    };
+  });
+
 
 const esDateOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",
@@ -203,7 +167,10 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
           <div
             class="absolute top-0 left-1/2 w-4 h-4 rounded-full -translate-x-1/2 -translate-y-1/2 bg-[linear-gradient(135deg,#1d4ed8_0%,#38bdf8_38%,#22c55e_56%,#1d4ed8_100%)] shadow-[0_0_14px_rgba(56,189,248,0.5)]"
           >
-            <div class="absolute inset-x-[20%] top-[48%] h-[18%] rounded-full bg-white/75 opacity-80"></div>
+            <div
+              class="absolute inset-x-[20%] top-[48%] h-[18%] rounded-full bg-white/75 opacity-80"
+            >
+            </div>
           </div>
         </div>
 
@@ -237,7 +204,10 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
           <div
             class="absolute top-0 left-1/2 w-6 h-6 rounded-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_35%_35%,#fef3c7_0%,#d6b16d_45%,#8b5e34_100%)] shadow-[0_0_20px_rgba(214,177,109,0.35)]"
           >
-            <div class="absolute left-1/2 top-1/2 w-[170%] h-[34%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d6c0a1]/80 bg-[#d6c0a1]/15 rotate-[22deg]"></div>
+            <div
+              class="absolute left-1/2 top-1/2 w-[170%] h-[34%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d6c0a1]/80 bg-[#d6c0a1]/15 rotate-[22deg]"
+            >
+            </div>
           </div>
         </div>
 
@@ -249,7 +219,10 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
           <div
             class="absolute top-0 left-1/2 w-5 h-5 rounded-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_35%_35%,#dbeafe_0%,#60a5fa_48%,#1d4ed8_100%)] shadow-[0_0_16px_rgba(96,165,250,0.38)]"
           >
-            <div class="absolute left-1/2 top-1/2 w-[160%] h-[22%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-100/60 rotate-[12deg]"></div>
+            <div
+              class="absolute left-1/2 top-1/2 w-[160%] h-[22%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-100/60 rotate-[12deg]"
+            >
+            </div>
           </div>
         </div>
 
@@ -350,7 +323,7 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       {
         posts.map((post) => {
-          const isTech = post.data.category === "TECH";
+          const isTech = post.data.category === "Logbook: Tech";
           const categoryColor = isTech ? "text-secondary" : "text-primary";
           const borderColorHover = isTech
             ? "hover:border-secondary/50"
@@ -406,7 +379,7 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
                 </p>
 
                 <a
-                  href={`/${lang}/blog/${post.id}`}
+                  href={`/${lang}/blog/${post.slug}`}
                   class={`text-[9px] font-heading font-bold text-white uppercase tracking-[0.2em] flex items-center ${btnHover} transition-colors mt-auto`}
                 >
                   {post.data.buttonText}{" "}
@@ -479,7 +452,10 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
     >
       SUSCRIBIRSE AL FEED DE INVESTIGACIÓN
     </h2>
-    <p id="home-subscribe-text" class="text-gray-400 font-body text-sm max-w-lg mb-10 leading-relaxed">
+    <p
+      id="home-subscribe-text"
+      class="text-gray-400 font-body text-sm max-w-lg mb-10 leading-relaxed"
+    >
       Reciba actualizaciones semanales sobre anomalías astronómicas y progreso
       en la escala Kardashev directamente en su terminal.
     </p>
