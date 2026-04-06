@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
@@ -23,6 +23,7 @@ const copy = {
     scaleCta: "MANUAL DE ESCALA",
     archivesTitle: "LOGBOOK DE INVESTIGACIÓN",
     filterAll: "TODOS",
+    filterCosmos: "COSMOS",
     filterTech: "TECNOLOGÍA",
     subscribeTitle: "SUSCRIBIRSE AL FEED DE INVESTIGACIÓN",
     subscribeText:
@@ -41,6 +42,7 @@ const copy = {
     scaleCta: "SCALE MANUAL",
     archivesTitle: "RESEARCH LOGBOOK",
     filterAll: "ALL",
+    filterCosmos: "COSMOS",
     filterTech: "TECH",
     subscribeTitle: "SUBSCRIBE TO THE RESEARCH FEED",
     subscribeText:
@@ -66,7 +68,6 @@ const posts = allPosts
       categoryLabel: formatTaxonomyLabel(taxonomy.category),
     };
   });
-
 
 const esDateOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",
@@ -94,16 +95,14 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
       >
         Karscale.<br />{copy.heroLead}<br /><span
           class="text-secondary drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]"
-          >progreso cósmico.</span
+          >{copy.heroHighlight}</span
         >
       </h1>
       <p
         id="home-hero-text"
         class="text-gray-400 font-body text-sm md:text-base max-w-md leading-relaxed mb-12"
       >
-        Una terminal de investigación dedicada a la clasificación de
-        civilizaciones y el análisis de la tecno-firma universal a través de la
-        escala de Nikolai Kardashev.
+        {copy.heroText}
       </p>
       <div class="flex flex-wrap gap-4 w-full sm:w-auto">
         <a
@@ -111,14 +110,14 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
           href="#archives"
           class="bg-primary hover:bg-primary/90 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors w-full sm:w-auto text-center shadow-[0_0_20px_rgba(139,92,246,0.3)]"
         >
-          ACCEDER A LOS ARCHIVOS
+          {copy.archiveCta}
         </a>
         <a
           id="home-scale-cta"
           href="#scale"
           class="border border-white/20 hover:border-white/40 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors w-full sm:w-auto text-center hover:bg-white/5"
         >
-          MANUAL DE ESCALA
+          {copy.scaleCta}
         </a>
       </div>
     </div>
@@ -301,23 +300,24 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
           id="home-archives-title"
           class="text-3xl md:text-4xl font-heading font-bold text-white tracking-wide uppercase"
         >
-          LOGBOOK DE INVESTIGACIÓN
+          {copy.archivesTitle}
         </h2>
       </div>
       <div class="flex flex-wrap items-center gap-4 sm:gap-6">
         <button
           id="home-filter-all"
           class="text-[10px] sm:text-xs font-heading font-bold text-gray-300 tracking-widest uppercase bg-white/10 px-5 py-2.5 border border-white/10"
-          >TODOS</button
+          >{copy.filterAll}</button
+        >
+        <button
+          id="home-filter-cosmos"
+          class="text-[10px] sm:text-xs font-heading font-bold text-gray-500 hover:text-gray-300 tracking-widest uppercase transition-colors px-2"
+          >{copy.filterCosmos}</button
         >
         <button
           id="home-filter-tech"
           class="text-[10px] sm:text-xs font-heading font-bold text-gray-500 hover:text-gray-300 tracking-widest uppercase transition-colors px-2"
-          >COSMOS</button
-        >
-        <button
-          class="text-[10px] sm:text-xs font-heading font-bold text-gray-500 hover:text-gray-300 tracking-widest uppercase transition-colors px-2"
-          >TECNOLOGÍA</button
+          >{copy.filterTech}</button
         >
       </div>
     </div>
@@ -452,28 +452,27 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
       id="home-subscribe-title"
       class="text-2xl md:text-3xl font-heading font-bold text-white uppercase tracking-widest mb-6"
     >
-      SUSCRIBIRSE AL FEED DE INVESTIGACIÓN
+      {copy.subscribeTitle}
     </h2>
     <p
       id="home-subscribe-text"
       class="text-gray-400 font-body text-sm max-w-lg mb-10 leading-relaxed"
     >
-      Reciba actualizaciones semanales sobre anomalías astronómicas y progreso
-      en la escala Kardashev directamente en su terminal.
+      {copy.subscribeText}
     </p>
 
     <div class="flex w-full max-w-xl group relative z-10">
       <input
         id="home-email-input"
         type="email"
-        placeholder="DIRECCIÓN DE ENLACE..."
+        placeholder={copy.emailPlaceholder}
         class="flex-1 bg-[#111] border border-white/10 px-6 py-4 text-xs text-gray-300 font-body focus:outline-none focus:border-white/30 uppercase tracking-widest placeholder-gray-600 transition-colors"
       />
       <button
         id="home-connect-button"
         class="bg-primary hover:bg-primary/80 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors"
       >
-        CONECTAR
+        {copy.connect}
       </button>
     </div>
   </section>
