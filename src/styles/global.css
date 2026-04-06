@@ -20,6 +20,7 @@
 @layer components {
   .blog-prose {
     text-wrap: pretty;
+    font-family: var(--font-body);
   }
 
   .blog-prose :where(p) {
@@ -31,6 +32,11 @@
   .blog-prose :where(h2) {
     margin-top: 2.8rem;
     margin-bottom: 1rem;
+    font-family: var(--font-heading);
+  }
+
+  .blog-prose :where(h3, h4) {
+    font-family: var(--font-heading);
   }
 
   .blog-prose :where(ul, ol) {
@@ -77,6 +83,7 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
     border-radius: 1.5rem;
     padding: 1.25rem;
+    font-family: var(--font-body);
   }
 
   .signal-callout h3 {
@@ -91,6 +98,7 @@
   .signal-callout ul {
     margin: 0;
     color: #d1d5db;
+    font-family: var(--font-body);
   }
 
   .signal-grid {
@@ -110,6 +118,7 @@
     background: rgba(255, 255, 255, 0.03);
     border-radius: 1.5rem;
     padding: 1rem;
+    font-family: var(--font-body);
   }
 
   .signal-grid strong {

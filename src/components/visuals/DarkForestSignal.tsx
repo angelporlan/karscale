@@ -52,7 +52,7 @@ export default function DarkForestSignal({ lang = "es" }: { lang?: "es" | "en" }
   const t = i18n[lang] || i18n["es"];
 
   return (
-    <div className="relative my-14 overflow-hidden rounded-[32px] border border-white/10 bg-[#020408] px-6 py-8 sm:px-8">
+    <div className="relative my-14 overflow-hidden rounded-[32px] border border-white/10 bg-[#020408] px-6 py-8 font-body sm:px-8">
       {/* Fondos y gradientes */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_35%),radial-gradient(circle_at_bottom,rgba(244,63,94,0.08),transparent_38%)]" />
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
@@ -122,11 +122,11 @@ export default function DarkForestSignal({ lang = "es" }: { lang?: "es" | "en" }
             <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-gray-500">
               {t.costTitle}
             </p>
-            <p className="mt-3 text-sm leading-6 text-gray-300">
+            <p className="mt-3 font-body text-sm leading-6 text-gray-300">
               {t.costDesc}
             </p>
           </div>
-          <p className="mt-4 text-xs text-gray-400 italic">
+          <p className="mt-4 font-body text-xs italic text-gray-400">
             {t.costRef}
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function DarkForestSignal({ lang = "es" }: { lang?: "es" | "en" }
             <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-gray-500">
               {t.intentTitle}
             </p>
-            <p className="mt-3 text-sm leading-6 text-gray-300">
+            <p className="mt-3 font-body text-sm leading-6 text-gray-300">
               {t.intentDesc}
             </p>
           </div>
@@ -145,11 +145,11 @@ export default function DarkForestSignal({ lang = "es" }: { lang?: "es" | "en" }
             <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-gray-500">
               {t.strategyTitle}
             </p>
-            <p className="mt-3 text-sm leading-6 text-gray-300">
+            <p className="mt-3 font-body text-sm leading-6 text-gray-300">
               {t.strategyDesc}
             </p>
           </div>
-          <p className="mt-4 text-xs text-cyan-400/70 italic">
+          <p className="mt-4 font-body text-xs italic text-cyan-400/70">
             {t.strategyRef}
           </p>
         </div>
