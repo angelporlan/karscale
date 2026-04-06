@@ -1,19 +1,18 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
+import { formatTaxonomyLabel, getBlogTaxonomyFromId } from '../../../utils/blog';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   
   return posts.map(post => {
-    // Si el slug incluye la carpeta del idioma (eg "es/expansion"), la quitamos
-    const [_, ...slugParts] = post.id.split('/');
-    const urlSlug = slugParts.length > 0 ? slugParts.join('/') : post.id;
+    const { slug } = getBlogTaxonomyFromId(post.id);
 
     return {
       params: { 
         lang: post.data.lang,
-        slug: urlSlug 
+        slug
       },
       props: { post },
     };
@@ -23,10 +22,12 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const lang = post.data.lang;
 const { Content } = await render(post);
+const taxonomy = getBlogTaxonomyFromId(post.id);
+const categoryLabel = formatTaxonomyLabel(taxonomy.category);
 
-const isDeepCosmos = post.data.category === 'Deep Cosmos';
-const isTech = post.data.category === 'Logbook: Tech';
-const isGreatSilence = post.data.category === 'El Gran Silencio';
+const isDeepCosmos = taxonomy.category === 'deep-cosmos';
+const isTech = taxonomy.category === 'logbook-tech';
+const isGreatSilence = taxonomy.category === 'great-silence';
 const articleClass = isTech
   ? 'border-l pl-8 sm:pl-12 py-4 border-electricCyan/40 relative'
   : isGreatSilence
@@ -69,7 +70,7 @@ const proseClass = isGreatSilence
     <header class="mb-14">
       <div class="flex flex-wrap items-center gap-4 mb-8">
         <span class={`font-mono text-xs font-bold px-3 py-1 border rounded-full backdrop-blur-md ${isTech ? 'border-electricCyan/50 text-electricCyan bg-electricCyan/10' : 'border-neonPurple/50 text-neonPurple bg-neonPurple/10'} `}>
-          {post.data.category}
+          {categoryLabel}
         </span>
         <time class="text-gray-500 font-mono text-sm tracking-wider">
           {post.data.pubDate.toLocaleDateString(post.data.lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}

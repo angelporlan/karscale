@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
+import { formatTaxonomyLabel, getBlogTaxonomyFromId } from "../../utils/blog";
 
 // Declaramos las rutas dinámicas para los idiomas
 export function getStaticPaths() {
@@ -56,12 +57,13 @@ const allPosts = await getCollection("blog", ({ data }) => {
 const posts = allPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .map((post) => {
-    // Extract slug from post.id (e.g. "en/my-post" -> "my-post")
-    const parts = post.id.split("/");
-    const slug = parts.length > 1 ? parts.slice(1).join("/") : post.id;
+    const taxonomy = getBlogTaxonomyFromId(post.id);
     return {
       ...post,
-      slug,
+      slug: taxonomy.slug,
+      category: taxonomy.category,
+      subcategory: taxonomy.subcategory,
+      categoryLabel: formatTaxonomyLabel(taxonomy.category),
     };
   });
 
@@ -323,7 +325,7 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       {
         posts.map((post) => {
-          const isTech = post.data.category === "Logbook: Tech";
+          const isTech = post.category === "logbook-tech";
           const categoryColor = isTech ? "text-secondary" : "text-primary";
           const borderColorHover = isTech
             ? "hover:border-secondary/50"
@@ -358,7 +360,7 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
                   <span
                     class={`text-[9px] font-heading font-bold uppercase tracking-[0.15em] ${categoryColor}`}
                   >
-                    {post.data.category}
+                    {post.categoryLabel}
                   </span>
                   <span class="text-[9px] font-mono text-gray-500 tracking-[0.1em]">
                     {post.data.pubDate
