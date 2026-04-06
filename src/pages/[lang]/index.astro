@@ -1,5 +1,6 @@
 ﻿---
 import Layout from "../../layouts/Layout.astro";
+export const prerender = true;
 
 import { getCollection } from "astro:content";
 import { formatTaxonomyLabel, getBlogTaxonomyFromId, getBlogUrlPath } from "../../utils/blog";
@@ -28,6 +29,8 @@ const copy = {
     subscribeTitle: "SUSCRIBIRSE AL FEED DE INVESTIGACIÓN",
     subscribeText:
       "Reciba actualizaciones semanales sobre anomalías astronómicas y progreso en la escala Kardashev directamente en su terminal.",
+    subscribeConsent:
+      "Al suscribirte, aceptas recibir correos del blog. Podrás darte de baja cuando quieras.",
     emailPlaceholder: "DIRECCIÓN DE ENLACE...",
     connect: "CONECTAR",
   },
@@ -47,6 +50,8 @@ const copy = {
     subscribeTitle: "SUBSCRIBE TO THE RESEARCH FEED",
     subscribeText:
       "Receive weekly updates on astronomical anomalies and progress along the Kardashev scale directly in your terminal.",
+    subscribeConsent:
+      "By subscribing, you agree to receive emails from the blog. You can unsubscribe at any time.",
     emailPlaceholder: "LINK ADDRESS...",
     connect: "CONNECT",
   },
@@ -462,22 +467,52 @@ const esDateOptions: Intl.DateTimeFormatOptions = {
       {copy.subscribeText}
     </p>
 
-    <div class="flex w-full max-w-xl group relative z-10">
-      <input
-        id="home-email-input"
-        type="email"
-        placeholder={copy.emailPlaceholder}
-        class="flex-1 bg-[#111] border border-white/10 px-6 py-4 text-xs text-gray-300 font-body focus:outline-none focus:border-white/30 uppercase tracking-widest placeholder-gray-600 transition-colors"
-      />
-      <button
-        id="home-connect-button"
-        class="bg-primary hover:bg-primary/80 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors"
+    <form
+      id="home-subscribe-form"
+      class="w-full max-w-xl relative z-10"
+      data-lang={currentLang}
+      method="post"
+      action="/api/subscribe"
+    >
+      <div class="flex flex-col sm:flex-row w-full group">
+        <input
+          id="home-email-input"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          placeholder={copy.emailPlaceholder}
+          class="flex-1 bg-[#111] border border-white/10 px-6 py-4 text-xs text-gray-300 font-body focus:outline-none focus:border-white/30 uppercase tracking-widest placeholder-gray-600 transition-colors"
+        />
+        <button
+          id="home-connect-button"
+          type="submit"
+          class="bg-primary hover:bg-primary/80 text-white font-heading font-bold text-xs uppercase tracking-[0.1em] px-8 py-4 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {copy.connect}
+        </button>
+      </div>
+      <p class="mt-4 text-[11px] text-gray-500 font-body max-w-xl">
+        {copy.subscribeConsent}
+      </p>
+      <div
+        id="home-subscribe-feedback"
+        class="mt-4 min-h-0 max-h-0 overflow-hidden opacity-0 translate-y-2 transition-all duration-500 ease-out"
+        aria-live="polite"
       >
-        {copy.connect}
-      </button>
-    </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.25)]">
+          <p
+            id="home-subscribe-feedback-text"
+            class="text-sm font-body leading-relaxed text-gray-300"
+          ></p>
+        </div>
+      </div>
+    </form>
   </section>
 </Layout>
 
-<script src="../../scripts/home-orbits.ts"></script>
-<script src="../../scripts/home-copy.ts"></script>
+<script>
+  import "../../scripts/home-orbits.ts";
+  import "../../scripts/home-copy.ts";
+  import "../../scripts/home-subscribe.ts";
+</script>
