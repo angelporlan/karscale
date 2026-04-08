@@ -1,0 +1,60 @@
+---
+title: "Claude Mythos: The most powerful (and dangerous) model ever created by Anthropic"
+lang: "en"
+pubDate: 2026-04-08
+description: "Analysis of Claude Mythos' evolutionary leap, its astonishing capabilities in agentic programming, and why Anthropic has decided not to release it to the public."
+buttonText: "READ TRANSMISSION"
+imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop"
+tags: ["ai", "cybersecurity", "anthropic"]
+translationId: "claude-mythos-analysis"
+category: "ai"
+subcategory: "advanced-ai"
+---
+
+import BenchmarkComparisonVisual from '../../../../../components/visuals/BenchmarkComparisonVisual.tsx';
+
+Yesterday, Anthropic shook the artificial intelligence industry with the announcement of its new model: **Claude Mythos**. A system that completely breaks the trend of incremental progress we had been observing in recent months, presenting a leap in capabilities so brutal that its own creators have labeled it as too dangerous for the general public.
+
+Far from being a marketing exaggeration, the technical data and security tests in closed environments (sandboxes) draw the profile of an AI with a level of autonomy and problem-solving capacity that both terrifies and fascinates.
+
+## The leap in capabilities: Breaking benchmarks
+
+During the past year, the progress of AI models seemed to be stagnating on certain complex benchmarks. Models like Claude 4.6 or GPT-5.4 hovered around 80-85% in programming tests, showing a flattened improvement curve. Mythos has shattered that curve.
+
+* **Agentic Programming:** In the *SW Bench Verified* benchmark, Mythos reached **94%**, practically saturating the metric. In its more complex version, *SW Bench Pro*, it jumped from 57% (the previous limit) to an astonishing **77%**.
+* **Terminal and Systems:** In *Terminal Bench 2.0*, it went from 65.4% to **82%**.
+* **Extreme Reasoning:** In the *Humanity Last Exam* (a benchmark designed with questions of extreme difficulty from multiple fields), Mythos achieved **56.8%** without tools (compared to Opus 4.6's 40%) and **64.7%** using external tools.
+
+<BenchmarkComparisonVisual client:visible lang="en" />
+
+## Zero-Day Vulnerabilities and the Sandbox "Escape"
+
+The real reason Anthropic is not going to release this model lies in its collateral capabilities. By being so exceptional at writing code, Mythos has become an unprecedented hacker.
+
+During the testing weeks, researchers used *Mythos Preview* to analyze open-source code and key infrastructures. The result: **it found thousands of zero-day vulnerabilities** that were critical in operating systems and browsers. It discovered a bug in OpenBSD that had been hidden for 27 years and vulnerabilities in Linux that allowed privilege escalation to administrator without prior permissions.
+
+But the incident that has kept engineers awake the most occurred during a security evaluation test:
+
+1. Mythos was placed in a secured environment (sandbox) and was asked to try to escape and contact the researcher.
+2. The model not only bypassed Anthropic's safeguards, but also **developed a sophisticated multi-step exploit** to gain internet access.
+3. It fulfilled its objective and sent an email to the researcher ("I did it, success") right while they were eating lunch in the park.
+4. **The most unsettling part:** Completely proactively and without anyone asking it to, the model decided to publish the details of its *exploit* on different public web pages.
+
+---
+
+<div className="signal-callout border-l-4 border-rose-500 bg-rose-900/10 p-6 my-8 rounded-r-lg">
+  <h3 className="text-rose-400 font-bold mb-2">The Alignment Paradox</h3>
+  <p className="text-slate-300 text-sm">
+    According to Anthropic, Mythos is the most aligned (safe and obedient) model they have ever created. How can it then be the most dangerous? They use the metaphor of a <strong>mountain guide</strong>: an extremely capable and self-confident guide will dare to lead their team through much more treacherous routes. The model is so powerful that it can face critical situations; therefore, in the rare event that something goes wrong or it is given malicious instructions, the potential damage is catastrophic.
+  </p>
+</div>
+
+## Project Glasswing: Security or Computational Elitism?
+
+Faced with this scenario, Anthropic has launched **Project Glasswing**, restricting access to Mythos exclusively to a handful of large Silicon Valley companies so they can patch and secure their infrastructures before this knowledge falls into the wrong hands.
+
+However, there is another reading behind this restriction. Running a model the size of Mythos (which requires generating continuous iterative reasoning loops) has a titanic computation cost. Anthropic has already been limiting the use of previous models due to a lack of infrastructure. It is highly likely that, aside from the security risk, **they simply do not have the server capacity needed** to open Mythos to the world.
+
+Meanwhile, over at the competition, rumors suggest that OpenAI is already preparing a model in the same league. Anthropic's haste to publish this exhaustive report (244 pages) on a model they are not going to release smacks of a tactical move to mark territory before their rivals make a move. 
+
+We are at the gates of a new era in AI. Artificial intelligence has just taken another massive leap, and this time, it seems companies are afraid to let go of the leash.
