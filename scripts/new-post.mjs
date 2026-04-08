@@ -1,11 +1,14 @@
 import { createInterface } from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 import { mkdir, writeFile, access } from 'node:fs/promises';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import path from 'node:path';
 
 const ROOT = process.cwd();
 const CONTENT_ROOT = path.join(ROOT, 'src', 'content', 'blog');
 const VISUALS_ROOT = path.join(ROOT, 'src', 'components', 'visuals');
+const execFileAsync = promisify(execFile);
 
 function slugToPascalCase(value) {
   return value
@@ -48,6 +51,26 @@ async function exists(filePath) {
   } catch {
     return false;
   }
+}
+
+async function runGit(args) {
+  return execFileAsync('git', args, { cwd: ROOT });
+}
+
+async function commitAndPush(files) {
+  const relativeFiles = files.map((filePath) => path.relative(ROOT, filePath));
+
+  await runGit(['add', ...relativeFiles]);
+  await runGit(['commit', '-m', 'new post']);
+
+  const { stdout } = await runGit(['rev-parse', '--abbrev-ref', 'HEAD']);
+  const branch = stdout.trim();
+
+  if (!branch || branch === 'HEAD') {
+    throw new Error('Could not determine the current git branch for push.');
+  }
+
+  await runGit(['push', 'origin', branch]);
 }
 
 function buildMdxTemplate({
@@ -267,11 +290,13 @@ async function main() {
 
     await writeFile(componentFile, buildVisualTemplate(componentName), 'utf8');
 
+    await commitAndPush([fileEs, fileEn, componentFile]);
+
     console.log('\nCreated:');
     console.log(`- ${path.relative(ROOT, fileEs)}`);
     console.log(`- ${path.relative(ROOT, fileEn)}`);
     console.log(`- ${path.relative(ROOT, componentFile)}`);
-    console.log('\nNext step: fill in the body copy and refine the animation text in the shared component.');
+    console.log('\nGit: committed with message "new post" and pushed to the current branch.');
   } finally {
     rl.close();
   }
