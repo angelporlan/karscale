@@ -280,7 +280,8 @@ ${body}
 }
 
 function buildVisualComponent({ componentName, item }) {
-  const title = String(item.titleEs ?? item.topic ?? '').trim();
+  const titleEs = String(item.titleEs ?? item.topic ?? '').trim();
+  const titleEn = String(item.titleEn ?? item.title ?? item.topic ?? '').trim();
   const categoryLabel = humanize(item.category);
   const subcategoryLabel = humanize(item.subcategory);
   const scanKeyframes = JSON.stringify(`
@@ -292,8 +293,8 @@ function buildVisualComponent({ componentName, item }) {
   const copy = {
     es: {
       eyebrow: `Archivo ${categoryLabel}`,
-      title,
-      description: `Una visual animada para leer ${title} desde ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
+      title: titleEs,
+      description: `Una visual animada para leer ${titleEs} desde ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
       badge: 'Escaneo activo',
       metricA: 'Señal',
       metricB: 'Escala',
@@ -304,8 +305,8 @@ function buildVisualComponent({ componentName, item }) {
     },
     en: {
       eyebrow: `${categoryLabel} archive`,
-      title,
-      description: `An animated visual for reading ${title} through ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
+      title: titleEn,
+      description: `An animated visual for reading ${titleEn} through ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
       badge: 'Active scan',
       metricA: 'Signal',
       metricB: 'Scale',

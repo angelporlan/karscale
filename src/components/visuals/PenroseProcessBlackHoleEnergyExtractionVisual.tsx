@@ -3,10 +3,10 @@
 const copy = {
   "es": {
     "eyebrow": "Archivo Kardashev",
-    "title": "El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros",
-    "description": "Una visual animada para leer El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros desde Kardashev / Type 3.",
+    "title": "El Proceso Penrose: Extracción de Energía de Agujeros Negros",
+    "description": "Una visual animada para leer El Proceso Penrose: Extracción de Energía de Agujeros Negros desde Kardashev / Type 3.",
     "badge": "Escaneo activo",
-    "metricA": "SeÃ±al",
+    "metricA": "Señal",
     "metricB": "Escala",
     "metricC": "Horizonte",
     "metricAValue": "1.0x",
@@ -15,8 +15,8 @@ const copy = {
   },
   "en": {
     "eyebrow": "Kardashev archive",
-    "title": "El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros",
-    "description": "An animated visual for reading El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros through Kardashev / Type 3.",
+    "title": "The Penrose Process: Extracting Energy from Black Holes",
+    "description": "An animated visual for reading The Penrose Process: Extracting Energy from Black Holes through Kardashev / Type 3.",
     "badge": "Active scan",
     "metricA": "Signal",
     "metricB": "Scale",
