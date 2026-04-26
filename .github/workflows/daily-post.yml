@@ -1,0 +1,48 @@
+name: Daily blog post
+
+on:
+  schedule:
+    - cron: "0 17 * * *"
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate queued post
+        env:
+          ENFORCE_MADRID_19: "1"
+        run: node scripts/new-post.mjs --no-git
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add queue.json src/content/blog src/components/visuals
+            git commit -m "Add daily blog post"
+            git push
+          else
+            echo "No changes to commit."
+          fi
