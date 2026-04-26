@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 
 const copy = {
   "es": {
     "eyebrow": "Archivo Kardashev",
-    "title": "El Proceso Penrose: Extracción de Energía de Agujeros Negros",
-    "description": "Una visual animada para leer El Proceso Penrose: Extracción de Energía de Agujeros Negros desde Kardashev / Type 3.",
+    "title": "El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros",
+    "description": "Una visual animada para leer El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros desde Kardashev / Type 3.",
     "badge": "Escaneo activo",
-    "metricA": "Señal",
+    "metricA": "SeÃ±al",
     "metricB": "Escala",
     "metricC": "Horizonte",
     "metricAValue": "1.0x",
@@ -15,8 +15,8 @@ const copy = {
   },
   "en": {
     "eyebrow": "Kardashev archive",
-    "title": "El Proceso Penrose: Extracción de Energía de Agujeros Negros",
-    "description": "An animated visual for reading El Proceso Penrose: Extracción de Energía de Agujeros Negros through Kardashev / Type 3.",
+    "title": "El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros",
+    "description": "An animated visual for reading El Proceso Penrose: ExtracciÃ³n de EnergÃ­a de Agujeros Negros through Kardashev / Type 3.",
     "badge": "Active scan",
     "metricA": "Signal",
     "metricB": "Scale",
@@ -51,7 +51,7 @@ function buildParticles(count: number): Particle[] {
   }));
 }
 
-export default function ProcesoPenroseAgujerosNegrosVisual({ lang = "es" }: { lang?: Lang }) {
+export default function PenroseProcessBlackHoleEnergyExtractionVisual({ lang = "es" }: { lang?: Lang }) {
   const t = copy[lang] ?? copy.es;
   const [particles, setParticles] = useState<Particle[]>([]);
 
@@ -153,3 +153,4 @@ export default function ProcesoPenroseAgujerosNegrosVisual({ lang = "es" }: { la
     </section>
   );
 }
+

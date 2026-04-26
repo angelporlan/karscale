@@ -72,6 +72,22 @@ function humanizeTopic(value) {
     .trim();
 }
 
+function getFileSlug(item) {
+  return normalizeSlug(String(item.slugEn ?? item.slug ?? ''));
+}
+
+function getComponentName(item, fileSlug) {
+  return String(item.componentNameEn ?? '').trim() || `${slugToPascalCase(fileSlug)}Visual`;
+}
+
+function getLocalizedTitle(item, lang) {
+  if (lang === 'es') {
+    return String(item.titleEs ?? item.title ?? item.topic ?? '').trim();
+  }
+
+  return String(item.titleEn ?? item.title ?? item.topic ?? '').trim();
+}
+
 function formatTags(tags) {
   return `[${tags.map((tag) => JSON.stringify(tag)).join(', ')}]`;
 }
@@ -153,18 +169,18 @@ function buildImageUrl(category) {
   return CATEGORY_IMAGES[category] ?? CATEGORY_IMAGES.theories;
 }
 
-function buildDescriptions(topic, categoryLabel, subcategoryLabel) {
+function buildDescriptions(title, categoryLabel, subcategoryLabel) {
   return {
-    es: `Una primera lectura de ${topic} desde ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
-    en: `A first reading of ${topic} through ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
+    es: `Una primera lectura de ${title} desde ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
+    en: `A first reading of ${title} through ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
   };
 }
 
-function buildBody({ lang, topic, categoryLabel, subcategoryLabel }) {
+function buildBody({ lang, title, categoryLabel, subcategoryLabel }) {
   const intro =
     lang === 'es'
-      ? `Hoy abrimos una nueva ficha de la bitacora: ${topic}. Esta pieza vive en ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}, justo donde la tecnologia extrema se cruza con la cosmologia, la filosofia y la pregunta de fondo sobre que clase de civilizacion queremos ser.`
-      : `Today we open a new log entry: ${topic}. This piece lives in ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}, right where extreme technology meets cosmology, philosophy, and the deeper question of what kind of civilization we intend to become.`;
+      ? `Hoy abrimos una nueva ficha de la bitacora: ${title}. Esta pieza vive en ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}, justo donde la tecnologia extrema se cruza con la cosmologia, la filosofia y la pregunta de fondo sobre que clase de civilizacion queremos ser.`
+      : `Today we open a new log entry: ${title}. This piece lives in ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}, right where extreme technology meets cosmology, philosophy, and the deeper question of what kind of civilization we intend to become.`;
 
   const calloutTitle = lang === 'es' ? 'Hipotesis de trabajo' : 'Working hypothesis';
   const calloutBody =
@@ -175,8 +191,8 @@ function buildBody({ lang, topic, categoryLabel, subcategoryLabel }) {
   const sectionOneTitle = lang === 'es' ? 'Por que importa' : 'Why it matters';
   const sectionOneBody =
     lang === 'es'
-      ? `El valor de ${topic} no esta solo en el dato tecnico. Esta en su capacidad para reorganizar nuestra idea de escala, riesgo y posibilidad. Cuando un tema toca la frontera de la IA, la energia o el destino cosmico, cambia la forma en que pensamos el futuro.`
-      : `The value of ${topic} is not just technical. It lies in its power to reorganize how we think about scale, risk, and possibility. When a topic touches the frontier of AI, energy, or cosmic destiny, it changes the way we imagine the future.`;
+      ? `El valor de ${title} no esta solo en el dato tecnico. Esta en su capacidad para reorganizar nuestra idea de escala, riesgo y posibilidad. Cuando un tema toca la frontera de la IA, la energia o el destino cosmico, cambia la forma en que pensamos el futuro.`
+      : `The value of ${title} is not just technical. It lies in its power to reorganize how we think about scale, risk, and possibility. When a topic touches the frontier of AI, energy, or cosmic destiny, it changes the way we imagine the future.`;
 
   const sectionTwoTitle = lang === 'es' ? 'Lo que sabemos hoy' : 'What we know today';
   const sectionTwoBody =
@@ -222,17 +238,17 @@ ${closing}
 function buildMdxDocument({ lang, item, pubDate, componentName, imageUrl }) {
   const categoryLabel = humanize(item.category);
   const subcategoryLabel = humanize(item.subcategory);
-  const descriptions = buildDescriptions(item.topic, categoryLabel, subcategoryLabel);
+  const title = getLocalizedTitle(item, lang) || humanizeTopic(item.topic);
+  const descriptions = buildDescriptions(title, categoryLabel, subcategoryLabel);
   const body = buildBody({
     lang,
-    topic: humanizeTopic(item.topic),
+    title,
     categoryLabel,
     subcategoryLabel,
   });
-  const title = humanizeTopic(item.topic);
   const buttonText = lang === 'es' ? 'LEER TRANSMISION' : 'READ TRANSMISSION';
   const tags = Array.from(
-    new Set([item.category, item.subcategory, normalizeSlug(item.slug)]),
+    new Set([item.category, item.subcategory, getFileSlug(item)]),
   );
   const importPath = path
     .relative(
@@ -250,7 +266,7 @@ description: ${asJson(descriptions[lang])}
 buttonText: ${asJson(buttonText)}
 imageUrl: ${asJson(imageUrl)}
 tags: ${formatTags(tags)}
-translationId: ${asJson(item.slug)}
+translationId: ${asJson(item.translationId ?? getFileSlug(item))}
 category: ${asJson(item.category)}
 subcategory: ${asJson(item.subcategory)}
 ---
@@ -264,10 +280,9 @@ ${body}
 }
 
 function buildVisualComponent({ componentName, item }) {
-  const topic = humanizeTopic(item.topic);
+  const title = String(item.titleEs ?? item.topic ?? '').trim();
   const categoryLabel = humanize(item.category);
   const subcategoryLabel = humanize(item.subcategory);
-  const title = topic;
   const scanKeyframes = JSON.stringify(`
               @keyframes scan {
                 0% { transform: translateY(-80%); }
@@ -278,7 +293,7 @@ function buildVisualComponent({ componentName, item }) {
     es: {
       eyebrow: `Archivo ${categoryLabel}`,
       title,
-      description: `Una visual animada para leer ${topic} desde ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
+      description: `Una visual animada para leer ${title} desde ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
       badge: 'Escaneo activo',
       metricA: 'Señal',
       metricB: 'Escala',
@@ -290,7 +305,7 @@ function buildVisualComponent({ componentName, item }) {
     en: {
       eyebrow: `${categoryLabel} archive`,
       title,
-      description: `An animated visual for reading ${topic} through ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
+      description: `An animated visual for reading ${title} through ${categoryLabel}${subcategoryLabel ? ` / ${subcategoryLabel}` : ''}.`,
       badge: 'Active scan',
       metricA: 'Signal',
       metricB: 'Scale',
@@ -527,14 +542,15 @@ async function main() {
       continue;
     }
 
-    const componentName = `${slugToPascalCase(item.slug)}Visual`;
+    const fileSlug = getFileSlug(item);
+    const componentName = getComponentName(item, fileSlug);
     const pubDate = getMadridDate();
     const imageUrl = buildImageUrl(item.category);
     const esDir = path.join(CONTENT_ROOT, 'es', item.category, item.subcategory);
     const enDir = path.join(CONTENT_ROOT, 'en', item.category, item.subcategory);
     const componentPath = path.join(VISUALS_ROOT, `${componentName}.tsx`);
-    const esPath = path.join(esDir, `${item.slug}.mdx`);
-    const enPath = path.join(enDir, `${item.slug}.mdx`);
+    const esPath = path.join(esDir, `${fileSlug}.mdx`);
+    const enPath = path.join(enDir, `${fileSlug}.mdx`);
 
     const existingResults = await Promise.all(
       [componentPath, esPath, enPath].map((filePath) => fileExists(filePath)),
@@ -547,7 +563,7 @@ async function main() {
 
     if (existingResults.some(Boolean)) {
       throw new Error(
-        `Refusing to overwrite existing files for ${item.slug}.\n` +
+        `Refusing to overwrite existing files for ${fileSlug}.\n` +
           [componentPath, esPath, enPath]
             .filter((_, index) => existingResults[index])
             .join('\n'),
