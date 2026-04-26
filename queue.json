@@ -1,0 +1,602 @@
+[
+    {
+        "topic": "Límites de la Ventana de Contexto en los Grandes Modelos de Lenguaje",
+        "category": "ai",
+        "subcategory": "current-ai",
+        "slug": "limites-ventana-contexto-llms"
+    },
+    {
+        "topic": "Razonamiento Algorítmico vs Memorización en IA Actual",
+        "category": "ai",
+        "subcategory": "current-ai",
+        "slug": "razonamiento-algoritmico-vs-memorizacion"
+    },
+    {
+        "topic": "El papel de los Agentes Autónomos Inteligentes",
+        "category": "ai",
+        "subcategory": "current-ai",
+        "slug": "agentes-autonomos-inteligentes"
+    },
+    {
+        "topic": "Escalamiento de Parámetros: ¿Hemos tocado techo?",
+        "category": "ai",
+        "subcategory": "current-ai",
+        "slug": "escalamiento-parametros-techo"
+    },
+    {
+        "topic": "IA Multimodal: Comprendiendo el mundo físico",
+        "category": "ai",
+        "subcategory": "current-ai",
+        "slug": "ia-multimodal-mundo-fisico"
+    },
+    {
+        "topic": "Test de Turing del Siglo XXI: ¿Cómo sabremos que es AGI?",
+        "category": "ai",
+        "subcategory": "agi",
+        "slug": "test-turing-siglo-21-agi"
+    },
+    {
+        "topic": "Impacto Económico Inmediato de la Inteligencia General",
+        "category": "ai",
+        "subcategory": "agi",
+        "slug": "impacto-economico-inteligencia-general"
+    },
+    {
+        "topic": "Arquitecturas Cognitivas más allá de los Transformers",
+        "category": "ai",
+        "subcategory": "agi",
+        "slug": "arquitecturas-cognitivas-post-transformers"
+    },
+    {
+        "topic": "El Problema de la Alineación de Valores en AGI",
+        "category": "ai",
+        "subcategory": "agi",
+        "slug": "problema-alineacion-valores-agi"
+    },
+    {
+        "topic": "La AGI como Herramienta de Investigación Científica",
+        "category": "ai",
+        "subcategory": "agi",
+        "slug": "agi-herramienta-investigacion-cientifica"
+    },
+    {
+        "topic": "La Explosión de Inteligencia (Singularidad Tecnológica)",
+        "category": "ai",
+        "subcategory": "asi",
+        "slug": "explosion-inteligencia-singularidad"
+    },
+    {
+        "topic": "Control de Infraestructuras Críticas por una ASI",
+        "category": "ai",
+        "subcategory": "asi",
+        "slug": "control-infraestructuras-asi"
+    },
+    {
+        "topic": "Dios Máquina: Perspectivas Filosóficas de la ASI",
+        "category": "ai",
+        "subcategory": "asi",
+        "slug": "dios-maquina-filosofia-asi"
+    },
+    {
+        "topic": "El Papel de la ASI en la Colonización Interestelar",
+        "category": "ai",
+        "subcategory": "asi",
+        "slug": "asi-colonizacion-interestelar"
+    },
+    {
+        "topic": "Riesgos Existenciales de una ASI no alineada",
+        "category": "ai",
+        "subcategory": "asi",
+        "slug": "riesgos-existenciales-asi-no-alineada"
+    },
+    {
+        "topic": "Almacenamiento de Datos Masivos en Cadenas de ADN",
+        "category": "ai",
+        "subcategory": "biocomputing",
+        "slug": "almacenamiento-datos-adn"
+    },
+    {
+        "topic": "Cerebros en un Chip: Organoides Cerebrales Interactivos",
+        "category": "ai",
+        "subcategory": "biocomputing",
+        "slug": "organoides-cerebrales-chip"
+    },
+    {
+        "topic": "Redes Neuronales Orgánicas vs Redes de Silicio",
+        "category": "ai",
+        "subcategory": "biocomputing",
+        "slug": "redes-organicas-vs-silicio"
+    },
+    {
+        "topic": "Interfaces Híbridas: Células Vivas en Placas de Circuito",
+        "category": "ai",
+        "subcategory": "biocomputing",
+        "slug": "interfaces-hibridas-celulas-circuitos"
+    },
+    {
+        "topic": "El Futuro Ecológico de la Computación Biológica",
+        "category": "ai",
+        "subcategory": "biocomputing",
+        "slug": "futuro-ecologico-computacion-biologica"
+    },
+    {
+        "topic": "La Transición Crítica del Tipo 0 al Tipo I",
+        "category": "kardashev",
+        "subcategory": "overview",
+        "slug": "transicion-critica-tipo-0-tipo-1"
+    },
+    {
+        "topic": "Escala Microdimensional de Barrow (Inversa a Kardashov)",
+        "category": "kardashev",
+        "subcategory": "overview",
+        "slug": "escala-barrow-inversa-kardashov"
+    },
+    {
+        "topic": "Consumo Energético vs Eficiencia Computacional",
+        "category": "kardashev",
+        "subcategory": "overview",
+        "slug": "consumo-energetico-vs-eficiencia"
+    },
+    {
+        "topic": "El Índice de Sagan y las Fracciones Tecnológicas",
+        "category": "kardashev",
+        "subcategory": "overview",
+        "slug": "indice-sagan-fracciones-tecnologicas"
+    },
+    {
+        "topic": "Fusión Nuclear: El Santo Grial de la Energía Limpia",
+        "category": "kardashev",
+        "subcategory": "type-1",
+        "slug": "fusion-nuclear-energia-limpia"
+    },
+    {
+        "topic": "Ingeniería Climática: El Termostato Planetario Global",
+        "category": "kardashev",
+        "subcategory": "type-1",
+        "slug": "ingenieria-climatica-termostato-global"
+    },
+    {
+        "topic": "Redes Eléctricas Globales y Transmisión Inalámbrica Orbital",
+        "category": "kardashev",
+        "subcategory": "type-1",
+        "slug": "redes-globales-transmision-orbital"
+    },
+    {
+        "topic": "Extracción de Energía Geotérmica a Escala Planetaria",
+        "category": "kardashev",
+        "subcategory": "type-1",
+        "slug": "extraccion-geotermica-planetaria"
+    },
+    {
+        "topic": "Enjambres de Dyson: La alternativa modular a la Esfera",
+        "category": "kardashev",
+        "subcategory": "type-2",
+        "slug": "enjambres-dyson-alternativa-modular"
+    },
+    {
+        "topic": "Motores Shkadov: Navegando con nuestro Sistema Solar",
+        "category": "kardashev",
+        "subcategory": "type-2",
+        "slug": "motores-shkadov-navegacion-estelar"
+    },
+    {
+        "topic": "Minería Estelar: Extracción directa de la Corona Solar",
+        "category": "kardashev",
+        "subcategory": "type-2",
+        "slug": "mineria-estelar-corona-solar"
+    },
+    {
+        "topic": "Megatelescopios a Escala de Sistema Solar",
+        "category": "kardashev",
+        "subcategory": "type-2",
+        "slug": "megatelescopios-escala-sistema-solar"
+    },
+    {
+        "topic": "El Proceso Penrose: Extracción de Energía de Agujeros Negros",
+        "category": "kardashev",
+        "subcategory": "type-3",
+        "slug": "proceso-penrose-agujeros-negros"
+    },
+    {
+        "topic": "Redes de Comunicación Galáctica mediante Entrelazamiento Cuántico",
+        "category": "kardashev",
+        "subcategory": "type-3",
+        "slug": "comunicacion-galactica-entrelazamiento"
+    },
+    {
+        "topic": "Estrellas Artificiales y Reciclaje de Galaxias Muertas",
+        "category": "kardashev",
+        "subcategory": "type-3",
+        "slug": "estrellas-artificiales-reciclaje-galaxias"
+    },
+    {
+        "topic": "Cerebros Matrioshka: Computación a Nivel Galáctico",
+        "category": "kardashev",
+        "subcategory": "type-3",
+        "slug": "cerebros-matrioshka-computacion-galactica"
+    },
+    {
+        "topic": "Terraformación de Marte: Fase Inicial e Ingeniería Atmosférica",
+        "category": "kardashev",
+        "subcategory": "multiplanetary",
+        "slug": "terraformacion-marte-fase-inicial"
+    },
+    {
+        "topic": "Base Lunar Artemis: Plataforma de Salto al Cosmos",
+        "category": "kardashev",
+        "subcategory": "multiplanetary",
+        "slug": "base-lunar-artemis"
+    },
+    {
+        "topic": "Ciudades Flotantes en Venus: Colonización Aérea",
+        "category": "kardashev",
+        "subcategory": "multiplanetary",
+        "slug": "ciudades-flotantes-venus"
+    },
+    {
+        "topic": "Colonización de Asteroides y Gravedad Rotacional",
+        "category": "kardashev",
+        "subcategory": "multiplanetary",
+        "slug": "colonizacion-asteroides-gravedad-rotacional"
+    },
+    {
+        "topic": "Anatomía de un Agujero Negro Supermasivo",
+        "category": "cosmos",
+        "subcategory": "celestial-mechanics",
+        "slug": "anatomia-agujero-negro-supermasivo"
+    },
+    {
+        "topic": "Cuásares: Los Faros más Brillantes del Universo",
+        "category": "cosmos",
+        "subcategory": "celestial-mechanics",
+        "slug": "cuasares-faros-universo"
+    },
+    {
+        "topic": "Estrellas de Neutrones y Púlsares: Relojes Cósmicos",
+        "category": "cosmos",
+        "subcategory": "celestial-mechanics",
+        "slug": "estrellas-neutrones-pulsares"
+    },
+    {
+        "topic": "El Misterio Insondable de la Materia Oscura",
+        "category": "cosmos",
+        "subcategory": "celestial-mechanics",
+        "slug": "misterio-materia-oscura"
+    },
+    {
+        "topic": "Colisión Galáctica: El Destino de Andrómeda y la Vía Láctea",
+        "category": "cosmos",
+        "subcategory": "celestial-mechanics",
+        "slug": "colision-galactica-andromeda-via-lactea"
+    },
+    {
+        "topic": "Big Freeze: La Muerte Térmica del Universo",
+        "category": "cosmos",
+        "subcategory": "universe-fate",
+        "slug": "big-freeze-muerte-termica"
+    },
+    {
+        "topic": "Big Rip: El Desgarro Final del Espaciotiempo",
+        "category": "cosmos",
+        "subcategory": "universe-fate",
+        "slug": "big-rip-desgarro-espaciotiempo"
+    },
+    {
+        "topic": "Big Crunch y el Modelo del Universo Cíclico",
+        "category": "cosmos",
+        "subcategory": "universe-fate",
+        "slug": "big-crunch-universo-ciclico"
+    },
+    {
+        "topic": "Decaimiento del Vacío y la Burbuja de Destrucción Verdadera",
+        "category": "cosmos",
+        "subcategory": "universe-fate",
+        "slug": "decaimiento-vacio-burbuja-destruccion"
+    },
+    {
+        "topic": "La Constante de Hubble y la Expansión Acelerada",
+        "category": "cosmos",
+        "subcategory": "universe-fate",
+        "slug": "constante-hubble-expansion-acelerada"
+    },
+    {
+        "topic": "El Sistema TRAPPIST-1 y sus Mundos Oceánicos Teóricos",
+        "category": "cosmos",
+        "subcategory": "exoplanets",
+        "slug": "sistema-trappist-1-mundos-oceanicos"
+    },
+    {
+        "topic": "Zonas Ricitos de Oro y el Peligro de la Excentricidad Orbital",
+        "category": "cosmos",
+        "subcategory": "exoplanets",
+        "slug": "zonas-ricitos-oro-excentricidad-orbital"
+    },
+    {
+        "topic": "Supertierras vs Minineptunos: La Línea Divisoria",
+        "category": "cosmos",
+        "subcategory": "exoplanets",
+        "slug": "supertierras-vs-minineptunos"
+    },
+    {
+        "topic": "Detección de Biofirmas Atmosféricas con el Telescopio James Webb",
+        "category": "cosmos",
+        "subcategory": "exoplanets",
+        "slug": "biofirmas-atmosfericas-james-webb"
+    },
+    {
+        "topic": "Planetas Errantes (Rogue Planets) en la Oscuridad Cósmica",
+        "category": "cosmos",
+        "subcategory": "exoplanets",
+        "slug": "planetas-errantes-oscuridad-cosmica"
+    },
+    {
+        "topic": "Vida basada en Silicio: Alternativas Bioquímicas al Carbono",
+        "category": "cosmos",
+        "subcategory": "xenobiology",
+        "slug": "vida-silicio-alternativa-carbono"
+    },
+    {
+        "topic": "Océanos Subsuperficiales en Encélado y Europa",
+        "category": "cosmos",
+        "subcategory": "xenobiology",
+        "slug": "oceanos-subsuperficiales-encelado-europa"
+    },
+    {
+        "topic": "Extremófilos Terrestres como Modelos Alienígenas",
+        "category": "cosmos",
+        "subcategory": "xenobiology",
+        "slug": "extremofilos-terrestres-modelos-alienigenas"
+    },
+    {
+        "topic": "Panspermia: ¿Son los Cometas Semillas de Vida?",
+        "category": "cosmos",
+        "subcategory": "xenobiology",
+        "slug": "panspermia-cometas-semillas-vida"
+    },
+    {
+        "topic": "Biosferas de Enanas Rojas y el Problema del Bloqueo Mareal",
+        "category": "cosmos",
+        "subcategory": "xenobiology",
+        "slug": "biosferas-enanas-rojas-bloqueo-mareal"
+    },
+    {
+        "topic": "La Hipótesis de la Tierra Rara: Por qué estamos solos",
+        "category": "theories",
+        "subcategory": "fermi",
+        "slug": "hipotesis-tierra-rara"
+    },
+    {
+        "topic": "El Principio de Mediocridad y la Ecuación de Drake Revisitada",
+        "category": "theories",
+        "subcategory": "fermi",
+        "slug": "principio-mediocridad-ecuacion-drake"
+    },
+    {
+        "topic": "Civilizaciones Sumergidas y la Hipótesis del Mundo Acuático",
+        "category": "theories",
+        "subcategory": "fermi",
+        "slug": "civilizaciones-sumergidas-mundo-acuatico"
+    },
+    {
+        "topic": "Hipótesis de la Estivación: Esperando la Era Fría del Universo",
+        "category": "theories",
+        "subcategory": "fermi",
+        "slug": "hipotesis-estivacion-esperando-era-fria"
+    },
+    {
+        "topic": "Armas Relativistas y la Destrucción Mutua Asegurada a nivel Cósmico",
+        "category": "theories",
+        "subcategory": "dark-forest",
+        "slug": "armas-relativistas-destruccion-mutua"
+    },
+    {
+        "topic": "Cadenas de Sospecha y la Explosión Tecnológica Indetectable",
+        "category": "theories",
+        "subcategory": "dark-forest",
+        "slug": "cadenas-sospecha-explosion-tecnologica"
+    },
+    {
+        "topic": "Ocultamiento Cósmico: La Reducción Voluntaria de Tecnofirmas",
+        "category": "theories",
+        "subcategory": "dark-forest",
+        "slug": "ocultamiento-cosmico-reduccion-tecnofirmas"
+    },
+    {
+        "topic": "El Dilema del Prisionero a Escala Galáctica",
+        "category": "theories",
+        "subcategory": "dark-forest",
+        "slug": "dilema-prisionero-escala-galactica"
+    },
+    {
+        "topic": "Teoría del Gran Filtro: ¿Detrás o Delante de Nosotros?",
+        "category": "theories",
+        "subcategory": "great-filter",
+        "slug": "gran-filtro-detras-o-delante"
+    },
+    {
+        "topic": "Catástrofes Inminentes: IA, Bioterrorismo y Riesgos Existenciales",
+        "category": "theories",
+        "subcategory": "great-filter",
+        "slug": "catastrofes-inminentes-riesgos-existenciales"
+    },
+    {
+        "topic": "El Filtro de la Multicelularidad: El cuello de botella biológico",
+        "category": "theories",
+        "subcategory": "great-filter",
+        "slug": "filtro-multicelularidad-cuello-botella"
+    },
+    {
+        "topic": "Escapar de la Gravedad: El Planeta de Origen como Filtro Crítico",
+        "category": "theories",
+        "subcategory": "great-filter",
+        "slug": "escapar-gravedad-planeta-origen-filtro"
+    },
+    {
+        "topic": "La Hipótesis de la Simulación: ¿Es el Universo un Código?",
+        "category": "theories",
+        "subcategory": "existential",
+        "slug": "hipotesis-simulacion-universo-codigo"
+    },
+    {
+        "topic": "El Cerebro de Boltzmann y la Ilusión de la Existencia",
+        "category": "theories",
+        "subcategory": "existential",
+        "slug": "cerebro-boltzmann-ilusion-existencia"
+    },
+    {
+        "topic": "Inmortalidad Cuántica y el Experimento de Wigner",
+        "category": "theories",
+        "subcategory": "existential",
+        "slug": "inmortalidad-cuantica-experimento-wigner"
+    },
+    {
+        "topic": "Solipsismo Cósmico y la Naturaleza Subjetiva de la Realidad",
+        "category": "theories",
+        "subcategory": "existential",
+        "slug": "solipsismo-cosmico-realidad-subjetiva"
+    },
+    {
+        "topic": "Agujeros de Gusano: Puentes de Einstein-Rosen Intergalácticos",
+        "category": "theories",
+        "subcategory": "fringe-physics",
+        "slug": "agujeros-gusano-puentes-einstein-rosen"
+    },
+    {
+        "topic": "La Teoría de Cuerdas y las Dimensiones Ocultas",
+        "category": "theories",
+        "subcategory": "fringe-physics",
+        "slug": "teoria-cuerdas-dimensiones-ocultas"
+    },
+    {
+        "topic": "El Multiverso y el Mecanismo de Inflación Eterna",
+        "category": "theories",
+        "subcategory": "fringe-physics",
+        "slug": "multiverso-inflacion-eterna"
+    },
+    {
+        "topic": "Motores Warp: Doblando la Métrica de Alcubierre",
+        "category": "theories",
+        "subcategory": "fringe-physics",
+        "slug": "motores-warp-metrica-alcubierre"
+    },
+    {
+        "topic": "Supremacía Cuántica: El Fin inminente de la Encriptación Clásica",
+        "category": "tech",
+        "subcategory": "quantum",
+        "slug": "supremacia-cuantica-fin-encriptacion"
+    },
+    {
+        "topic": "Criptografía Post-Cuántica y Seguridad de Datos Futura",
+        "category": "tech",
+        "subcategory": "quantum",
+        "slug": "criptografia-post-cuantica-seguridad"
+    },
+    {
+        "topic": "Simulación Molecular Exacta para Curar Enfermedades Incurables",
+        "category": "tech",
+        "subcategory": "quantum",
+        "slug": "simulacion-molecular-medicina-cuantica"
+    },
+    {
+        "topic": "Qubits Topológicos y la Lucha por la Corrección de Errores",
+        "category": "tech",
+        "subcategory": "quantum",
+        "slug": "qubits-topologicos-correccion-errores"
+    },
+    {
+        "topic": "Internet Cuántico y Comunicación Segura por Entrelazamiento",
+        "category": "tech",
+        "subcategory": "quantum",
+        "slug": "internet-cuantico-entrelazamiento"
+    },
+    {
+        "topic": "Neuralink y el Salto hacia la Lectura y Escritura Neuronal",
+        "category": "tech",
+        "subcategory": "neurotech",
+        "slug": "neuralink-lectura-escritura-neuronal"
+    },
+    {
+        "topic": "Transhumanismo y la Fusión Inevitable con la Inteligencia Artificial",
+        "category": "tech",
+        "subcategory": "neurotech",
+        "slug": "transhumanismo-fusion-inteligencia-artificial"
+    },
+    {
+        "topic": "Curación de Parálisis mediante Estimulación Espinal Profunda",
+        "category": "tech",
+        "subcategory": "neurotech",
+        "slug": "curacion-paralisis-estimulacion-espinal"
+    },
+    {
+        "topic": "Edición de Memorias y Neuroplasticidad Sintética",
+        "category": "tech",
+        "subcategory": "neurotech",
+        "slug": "edicion-memorias-neuroplasticidad-sintetica"
+    },
+    {
+        "topic": "Telepatía Digital: Resolviendo el Ancho de Banda Humano-Máquina",
+        "category": "tech",
+        "subcategory": "neurotech",
+        "slug": "telepatia-digital-ancho-banda"
+    },
+    {
+        "topic": "Robots Humanoides de Consumo: El Despliegue de Optimus y Figure",
+        "category": "tech",
+        "subcategory": "robotics",
+        "slug": "robots-humanoides-consumo-optimus"
+    },
+    {
+        "topic": "Enjambres Robóticos y Algoritmos de Mentes Colmena",
+        "category": "tech",
+        "subcategory": "robotics",
+        "slug": "enjambres-roboticos-mentes-colmena"
+    },
+    {
+        "topic": "La Automatización Industrial 100% Autónoma e Ininterrumpida",
+        "category": "tech",
+        "subcategory": "robotics",
+        "slug": "automatizacion-industrial-autonoma"
+    },
+    {
+        "topic": "Robótica Blanda (Soft Robotics) Inspirada en la Biología",
+        "category": "tech",
+        "subcategory": "robotics",
+        "slug": "robotica-blanda-biologia"
+    },
+    {
+        "topic": "Nanobots Médicos: Reparación Celular en el Torrente Sanguíneo",
+        "category": "tech",
+        "subcategory": "robotics",
+        "slug": "nanobots-medicos-torrente-sanguineo"
+    },
+    {
+        "topic": "El Impacto de los Superconductores a Temperatura Ambiente",
+        "category": "tech",
+        "subcategory": "materials",
+        "slug": "impacto-superconductores-temperatura-ambiente"
+    },
+    {
+        "topic": "Grafeno y Nanotubos de Carbono para Ascensores Espaciales",
+        "category": "tech",
+        "subcategory": "materials",
+        "slug": "grafeno-nanotubos-ascensores-espaciales"
+    },
+    {
+        "topic": "Metamateriales: Invisibilidad y Manipulación Óptica Avanzada",
+        "category": "tech",
+        "subcategory": "materials",
+        "slug": "metamateriales-invisibilidad-optica"
+    },
+    {
+        "topic": "Baterías de Estado Sólido y Altísima Densidad Energética",
+        "category": "tech",
+        "subcategory": "materials",
+        "slug": "baterias-estado-solido-alta-densidad"
+    },
+    {
+        "topic": "Bioplásticos Auto-reparables y Piel Sintética Sensorial",
+        "category": "tech",
+        "subcategory": "materials",
+        "slug": "bioplasticos-autoreparables-piel-sintetica"
+    }
+]
