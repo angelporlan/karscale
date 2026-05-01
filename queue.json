@@ -1,548 +1,542 @@
 [
-    {
-        "topic":  "Razonamiento AlgorÃ­tmico vs MemorizaciÃ³n en IA Actual",
-        "category":  "ai",
-        "subcategory":  "current-ai",
-        "slug":  "algorithmic-reasoning-vs-memorization"
-    },
-    {
-        "topic":  "El papel de los Agentes AutÃ³nomos Inteligentes",
-        "category":  "ai",
-        "subcategory":  "current-ai",
-        "slug":  "intelligent-autonomous-agents"
-    },
-    {
-        "topic":  "Escalamiento de ParÃ¡metros: Â¿Hemos tocado techo?",
-        "category":  "ai",
-        "subcategory":  "current-ai",
-        "slug":  "parameter-scaling-ceiling"
-    },
-    {
-        "topic":  "Test de Turing del Siglo XXI: Â¿CÃ³mo sabremos que es AGI?",
-        "category":  "ai",
-        "subcategory":  "agi",
-        "slug":  "turing-test-21st-century-agi"
-    },
-    {
-        "topic":  "Impacto EconÃ³mico Inmediato de la Inteligencia General",
-        "category":  "ai",
-        "subcategory":  "agi",
-        "slug":  "economic-impact-general-intelligence"
-    },
-    {
-        "topic":  "Arquitecturas Cognitivas mÃ¡s allÃ¡ de los Transformers",
-        "category":  "ai",
-        "subcategory":  "agi",
-        "slug":  "cognitive-architectures-post-transformers"
-    },
-    {
-        "topic":  "El Problema de la AlineaciÃ³n de Valores en AGI",
-        "category":  "ai",
-        "subcategory":  "agi",
-        "slug":  "value-alignment-problem-agi"
-    },
-    {
-        "topic":  "La AGI como Herramienta de InvestigaciÃ³n CientÃ­fica",
-        "category":  "ai",
-        "subcategory":  "agi",
-        "slug":  "agi-scientific-research-tool"
-    },
-    {
-        "topic":  "La ExplosiÃ³n de Inteligencia (Singularidad TecnolÃ³gica)",
-        "category":  "ai",
-        "subcategory":  "asi",
-        "slug":  "intelligence-explosion-singularity"
-    },
-    {
-        "topic":  "Control de Infraestructuras CrÃ­ticas por una ASI",
-        "category":  "ai",
-        "subcategory":  "asi",
-        "slug":  "critical-infrastructure-control-asi"
-    },
-    {
-        "topic":  "Dios MÃ¡quina: Perspectivas FilosÃ³ficas de la ASI",
-        "category":  "ai",
-        "subcategory":  "asi",
-        "slug":  "machine-god-philosophy-asi"
-    },
-    {
-        "topic":  "El Papel de la ASI en la ColonizaciÃ³n Interestelar",
-        "category":  "ai",
-        "subcategory":  "asi",
-        "slug":  "asi-interstellar-colonization"
-    },
-    {
-        "topic":  "Riesgos Existenciales de una ASI no alineada",
-        "category":  "ai",
-        "subcategory":  "asi",
-        "slug":  "existential-risks-unaligned-asi"
-    },
-    {
-        "topic":  "Almacenamiento de Datos Masivos en Cadenas de ADN",
-        "category":  "ai",
-        "subcategory":  "biocomputing",
-        "slug":  "dna-data-storage"
-    },
-    {
-        "topic":  "Cerebros en un Chip: Organoides Cerebrales Interactivos",
-        "category":  "ai",
-        "subcategory":  "biocomputing",
-        "slug":  "brain-organoids-chip"
-    },
-    {
-        "topic":  "Redes Neuronales OrgÃ¡nicas vs Redes de Silicio",
-        "category":  "ai",
-        "subcategory":  "biocomputing",
-        "slug":  "organic-networks-vs-silicon"
-    },
-    {
-        "topic":  "Interfaces HÃ­bridas: CÃ©lulas Vivas en Placas de Circuito",
-        "category":  "ai",
-        "subcategory":  "biocomputing",
-        "slug":  "hybrid-interfaces-cells-circuits"
-    },
-    {
-        "topic":  "El Futuro EcolÃ³gico de la ComputaciÃ³n BiolÃ³gica",
-        "category":  "ai",
-        "subcategory":  "biocomputing",
-        "slug":  "ecological-future-biocomputing"
-    },
-    {
-        "topic":  "La TransiciÃ³n CrÃ­tica del Tipo 0 al Tipo I",
-        "category":  "kardashev",
-        "subcategory":  "overview",
-        "slug":  "critical-transition-type-0-type-1"
-    },
-    {
-        "topic":  "Escala Microdimensional de Barrow (Inversa a Kardashov)",
-        "category":  "kardashev",
-        "subcategory":  "overview",
-        "slug":  "barrow-scale-inverse-kardashev"
-    },
-    {
-        "topic":  "Consumo EnergÃ©tico vs Eficiencia Computacional",
-        "category":  "kardashev",
-        "subcategory":  "overview",
-        "slug":  "energy-consumption-vs-efficiency"
-    },
-    {
-        "topic":  "El Ãndice de Sagan y las Fracciones TecnolÃ³gicas",
-        "category":  "kardashev",
-        "subcategory":  "overview",
-        "slug":  "sagan-index-technological-fractions"
-    },
-    {
-        "topic":  "FusiÃ³n Nuclear: El Santo Grial de la EnergÃ­a Limpia",
-        "category":  "kardashev",
-        "subcategory":  "type-1",
-        "slug":  "nuclear-fusion-clean-energy"
-    },
-    {
-        "topic":  "IngenierÃ­a ClimÃ¡tica: El Termostato Planetario Global",
-        "category":  "kardashev",
-        "subcategory":  "type-1",
-        "slug":  "climate-engineering-global-thermostat"
-    },
-    {
-        "topic":  "Redes ElÃ©ctricas Globales y TransmisiÃ³n InalÃ¡mbrica Orbital",
-        "category":  "kardashev",
-        "subcategory":  "type-1",
-        "slug":  "global-grids-orbital-transmission"
-    },
-    {
-        "topic":  "ExtracciÃ³n de EnergÃ­a GeotÃ©rmica a Escala Planetaria",
-        "category":  "kardashev",
-        "subcategory":  "type-1",
-        "slug":  "planetary-geothermal-extraction"
-    },
-    {
-        "topic":  "Enjambres de Dyson: La alternativa modular a la Esfera",
-        "category":  "kardashev",
-        "subcategory":  "type-2",
-        "slug":  "dyson-swarms-modular-alternative"
-    },
-    {
-        "topic":  "MinerÃ­a Estelar: ExtracciÃ³n directa de la Corona Solar",
-        "category":  "kardashev",
-        "subcategory":  "type-2",
-        "slug":  "stellar-mining-solar-corona"
-    },
-    {
-        "topic":  "Megatelescopios a Escala de Sistema Solar",
-        "category":  "kardashev",
-        "subcategory":  "type-2",
-        "slug":  "megatelescopes-solar-system-scale"
-    },
-    {
-        "topic":  "Redes de ComunicaciÃ³n GalÃ¡ctica mediante Entrelazamiento CuÃ¡ntico",
-        "category":  "kardashev",
-        "subcategory":  "type-3",
-        "slug":  "galactic-communication-entanglement"
-    },
-    {
-        "topic":  "Estrellas Artificiales y Reciclaje de Galaxias Muertas",
-        "category":  "kardashev",
-        "subcategory":  "type-3",
-        "slug":  "artificial-stars-galaxy-recycling"
-    },
-    {
-        "topic":  "Cerebros Matrioshka: ComputaciÃ³n a Nivel GalÃ¡ctico",
-        "category":  "kardashev",
-        "subcategory":  "type-3",
-        "slug":  "matrioshka-brains-galactic-computing"
-    },
-    {
-        "topic":  "TerraformaciÃ³n de Marte: Fase Inicial e IngenierÃ­a AtmosfÃ©rica",
-        "category":  "kardashev",
-        "subcategory":  "multiplanetary",
-        "slug":  "mars-terraforming-initial-phase"
-    },
-    {
-        "topic":  "Base Lunar Artemis: Plataforma de Salto al Cosmos",
-        "category":  "kardashev",
-        "subcategory":  "multiplanetary",
-        "slug":  "artemis-lunar-base"
-    },
-    {
-        "topic":  "Ciudades Flotantes en Venus: ColonizaciÃ³n AÃ©rea",
-        "category":  "kardashev",
-        "subcategory":  "multiplanetary",
-        "slug":  "floating-cities-venus"
-    },
-    {
-        "topic":  "ColonizaciÃ³n de Asteroides y Gravedad Rotacional",
-        "category":  "kardashev",
-        "subcategory":  "multiplanetary",
-        "slug":  "asteroid-colonization-rotational-gravity"
-    },
-    {
-        "topic":  "AnatomÃ­a de un Agujero Negro Supermasivo",
-        "category":  "cosmos",
-        "subcategory":  "celestial-mechanics",
-        "slug":  "supermassive-black-hole-anatomy"
-    },
-    {
-        "topic":  "CuÃ¡sares: Los Faros mÃ¡s Brillantes del Universo",
-        "category":  "cosmos",
-        "subcategory":  "celestial-mechanics",
-        "slug":  "quasars-lighthouses-universe"
-    },
-    {
-        "topic":  "El Misterio Insondable de la Materia Oscura",
-        "category":  "cosmos",
-        "subcategory":  "celestial-mechanics",
-        "slug":  "dark-matter-mystery"
-    },
-    {
-        "topic":  "ColisiÃ³n GalÃ¡ctica: El Destino de AndrÃ³meda y la VÃ­a LÃ¡ctea",
-        "category":  "cosmos",
-        "subcategory":  "celestial-mechanics",
-        "slug":  "galactic-collision-andromeda-milky-way"
-    },
-    {
-        "topic":  "Big Freeze: La Muerte TÃ©rmica del Universo",
-        "category":  "cosmos",
-        "subcategory":  "universe-fate",
-        "slug":  "big-freeze-heat-death"
-    },
-    {
-        "topic":  "Big Rip: El Desgarro Final del Espaciotiempo",
-        "category":  "cosmos",
-        "subcategory":  "universe-fate",
-        "slug":  "big-rip-spacetime-tear"
-    },
-    {
-        "topic":  "Decaimiento del VacÃ­o y la Burbuja de DestrucciÃ³n Verdadera",
-        "category":  "cosmos",
-        "subcategory":  "universe-fate",
-        "slug":  "vacuum-decay-true-destruction-bubble"
-    },
-    {
-        "topic":  "La Constante de Hubble y la ExpansiÃ³n Acelerada",
-        "category":  "cosmos",
-        "subcategory":  "universe-fate",
-        "slug":  "hubble-constant-accelerated-expansion"
-    },
-    {
-        "topic":  "El Sistema TRAPPIST-1 y sus Mundos OceÃ¡nicos TeÃ³ricos",
-        "category":  "cosmos",
-        "subcategory":  "exoplanets",
-        "slug":  "trappist-1-system-ocean-worlds"
-    },
-    {
-        "topic":  "Zonas Ricitos de Oro y el Peligro de la Excentricidad Orbital",
-        "category":  "cosmos",
-        "subcategory":  "exoplanets",
-        "slug":  "goldilocks-zones-orbital-eccentricity"
-    },
-    {
-        "topic":  "DetecciÃ³n de Biofirmas AtmosfÃ©ricas con el Telescopio James Webb",
-        "category":  "cosmos",
-        "subcategory":  "exoplanets",
-        "slug":  "atmospheric-biosignatures-james-webb"
-    },
-    {
-        "topic":  "Planetas Errantes (Rogue Planets) en la Oscuridad CÃ³smica",
-        "category":  "cosmos",
-        "subcategory":  "exoplanets",
-        "slug":  "rogue-planets-cosmic-darkness"
-    },
-    {
-        "topic":  "Vida basada en Silicio: Alternativas BioquÃ­micas al Carbono",
-        "category":  "cosmos",
-        "subcategory":  "xenobiology",
-        "slug":  "silicon-life-carbon-alternative"
-    },
-    {
-        "topic":  "OcÃ©anos Subsuperficiales en EncÃ©lado y Europa",
-        "category":  "cosmos",
-        "subcategory":  "xenobiology",
-        "slug":  "subsurface-oceans-enceladus-europa"
-    },
-    {
-        "topic":  "ExtremÃ³filos Terrestres como Modelos AlienÃ­genas",
-        "category":  "cosmos",
-        "subcategory":  "xenobiology",
-        "slug":  "terrestrial-extremophiles-alien-models"
-    },
-    {
-        "topic":  "Biosferas de Enanas Rojas y el Problema del Bloqueo Mareal",
-        "category":  "cosmos",
-        "subcategory":  "xenobiology",
-        "slug":  "red-dwarf-biospheres-tidal-locking"
-    },
-    {
-        "topic":  "La HipÃ³tesis de la Tierra Rara: Por quÃ© estamos solos",
-        "category":  "theories",
-        "subcategory":  "fermi",
-        "slug":  "rare-earth-hypothesis"
-    },
-    {
-        "topic":  "El Principio de Mediocridad y la EcuaciÃ³n de Drake Revisitada",
-        "category":  "theories",
-        "subcategory":  "fermi",
-        "slug":  "mediocrity-principle-drake-equation"
-    },
-    {
-        "topic":  "Civilizaciones Sumergidas y la HipÃ³tesis del Mundo AcuÃ¡tico",
-        "category":  "theories",
-        "subcategory":  "fermi",
-        "slug":  "submerged-civilizations-water-world"
-    },
-    {
-        "topic":  "HipÃ³tesis de la EstivaciÃ³n: Esperando la Era FrÃ­a del Universo",
-        "category":  "theories",
-        "subcategory":  "fermi",
-        "slug":  "aestivation-hypothesis-waiting-cold-era"
-    },
-    {
-        "topic":  "Armas Relativistas y la DestrucciÃ³n Mutua Asegurada a nivel CÃ³smico",
-        "category":  "theories",
-        "subcategory":  "dark-forest",
-        "slug":  "relativistic-weapons-mutual-destruction"
-    },
-    {
-        "topic":  "Cadenas de Sospecha y la ExplosiÃ³n TecnolÃ³gica Indetectable",
-        "category":  "theories",
-        "subcategory":  "dark-forest",
-        "slug":  "chains-of-suspicion-technological-explosion"
-    },
-    {
-        "topic":  "El Dilema del Prisionero a Escala GalÃ¡ctica",
-        "category":  "theories",
-        "subcategory":  "dark-forest",
-        "slug":  "prisoner-dilemma-galactic-scale"
-    },
-    {
-        "topic":  "TeorÃ­a del Gran Filtro: Â¿DetrÃ¡s o Delante de Nosotros?",
-        "category":  "theories",
-        "subcategory":  "great-filter",
-        "slug":  "great-filter-behind-or-ahead"
-    },
-    {
-        "topic":  "CatÃ¡strofes Inminentes: IA, Bioterrorismo y Riesgos Existenciales",
-        "category":  "theories",
-        "subcategory":  "great-filter",
-        "slug":  "imminent-catastrophes-existential-risks"
-    },
-    {
-        "topic":  "El Filtro de la Multicelularidad: El cuello de botella biolÃ³gico",
-        "category":  "theories",
-        "subcategory":  "great-filter",
-        "slug":  "multicellularity-filter-bottleneck"
-    },
-    {
-        "topic":  "Escapar de la Gravedad: El Planeta de Origen como Filtro CrÃ­tico",
-        "category":  "theories",
-        "subcategory":  "great-filter",
-        "slug":  "escaping-gravity-home-planet-filter"
-    },
-    {
-        "topic":  "La HipÃ³tesis de la SimulaciÃ³n: Â¿Es el Universo un CÃ³digo?",
-        "category":  "theories",
-        "subcategory":  "existential",
-        "slug":  "simulation-hypothesis-universe-code"
-    },
-    {
-        "topic":  "El Cerebro de Boltzmann y la IlusiÃ³n de la Existencia",
-        "category":  "theories",
-        "subcategory":  "existential",
-        "slug":  "boltzmann-brain-illusion-existence"
-    },
-    {
-        "topic":  "Inmortalidad CuÃ¡ntica y el Experimento de Wigner",
-        "category":  "theories",
-        "subcategory":  "existential",
-        "slug":  "quantum-immortality-wigner-experiment"
-    },
-    {
-        "topic":  "Solipsismo CÃ³smico y la Naturaleza Subjetiva de la Realidad",
-        "category":  "theories",
-        "subcategory":  "existential",
-        "slug":  "cosmic-solipsism-subjective-reality"
-    },
-    {
-        "topic":  "Agujeros de Gusano: Puentes de Einstein-Rosen IntergalÃ¡cticos",
-        "category":  "theories",
-        "subcategory":  "fringe-physics",
-        "slug":  "wormholes-einstein-rosen-bridges"
-    },
-    {
-        "topic":  "La TeorÃ­a de Cuerdas y las Dimensiones Ocultas",
-        "category":  "theories",
-        "subcategory":  "fringe-physics",
-        "slug":  "string-theory-hidden-dimensions"
-    },
-    {
-        "topic":  "El Multiverso y el Mecanismo de InflaciÃ³n Eterna",
-        "category":  "theories",
-        "subcategory":  "fringe-physics",
-        "slug":  "multiverso-eternal-inflation"
-    },
-    {
-        "topic":  "Motores Warp: Doblando la MÃ©trica de Alcubierre",
-        "category":  "theories",
-        "subcategory":  "fringe-physics",
-        "slug":  "warp-drives-alcubierre-metric"
-    },
-    {
-        "topic":  "SupremacÃ­a CuÃ¡ntica: El Fin inminente de la EncriptaciÃ³n ClÃ¡sica",
-        "category":  "tech",
-        "subcategory":  "quantum",
-        "slug":  "quantum-supremacy-end-encryption"
-    },
-    {
-        "topic":  "CriptografÃ­a Post-CuÃ¡ntica y Seguridad de Datos Futura",
-        "category":  "tech",
-        "subcategory":  "quantum",
-        "slug":  "post-quantum-cryptography-security"
-    },
-    {
-        "topic":  "SimulaciÃ³n Molecular Exacta para Curar Enfermedades Incurables",
-        "category":  "tech",
-        "subcategory":  "quantum",
-        "slug":  "molecular-simulation-quantum-medicine"
-    },
-    {
-        "topic":  "Qubits TopolÃ³gicos y la Lucha por la CorrecciÃ³n de Errores",
-        "category":  "tech",
-        "subcategory":  "quantum",
-        "slug":  "topological-qubits-error-correction"
-    },
-    {
-        "topic":  "Internet CuÃ¡ntico y ComunicaciÃ³n Segura por Entrelazamiento",
-        "category":  "tech",
-        "subcategory":  "quantum",
-        "slug":  "quantum-internet-entanglement"
-    },
-    {
-        "topic":  "Neuralink y el Salto hacia la Lectura y Escritura Neuronal",
-        "category":  "tech",
-        "subcategory":  "neurotech",
-        "slug":  "neuralink-neural-read-write"
-    },
-    {
-        "topic":  "Transhumanismo y la FusiÃ³n Inevitable con la Inteligencia Artificial",
-        "category":  "tech",
-        "subcategory":  "neurotech",
-        "slug":  "transhumanism-fusion-artificial-intelligence"
-    },
-    {
-        "topic":  "CuraciÃ³n de ParÃ¡lisis mediante EstimulaciÃ³n Espinal Profunda",
-        "category":  "tech",
-        "subcategory":  "neurotech",
-        "slug":  "paralysis-cure-spinal-stimulation"
-    },
-    {
-        "topic":  "EdiciÃ³n de Memorias y Neuroplasticidad SintÃ©tica",
-        "category":  "tech",
-        "subcategory":  "neurotech",
-        "slug":  "memory-editing-synthetic-neuroplasticity"
-    },
-    {
-        "topic":  "TelepatÃ­a Digital: Resolviendo el Ancho de Banda Humano-MÃ¡quina",
-        "category":  "tech",
-        "subcategory":  "neurotech",
-        "slug":  "digital-telepathy-bandwidth"
-    },
-    {
-        "topic":  "Robots Humanoides de Consumo: El Despliegue de Optimus y Figure",
-        "category":  "tech",
-        "subcategory":  "robotics",
-        "slug":  "consumer-humanoid-robots-optimus"
-    },
-    {
-        "topic":  "Enjambres RobÃ³ticos y Algoritmos de Mentes Colmena",
-        "category":  "tech",
-        "subcategory":  "robotics",
-        "slug":  "robotic-swarms-hive-minds"
-    },
-    {
-        "topic":  "La AutomatizaciÃ³n Industrial 100% AutÃ³noma e Ininterrumpida",
-        "category":  "tech",
-        "subcategory":  "robotics",
-        "slug":  "autonomous-industrial-automation"
-    },
-    {
-        "topic":  "RobÃ³tica Blanda (Soft Robotics) Inspirada en la BiologÃ­a",
-        "category":  "tech",
-        "subcategory":  "robotics",
-        "slug":  "soft-robotics-biology"
-    },
-    {
-        "topic":  "Nanobots MÃ©dicos: ReparaciÃ³n Celular en el Torrente SanguÃ­neo",
-        "category":  "tech",
-        "subcategory":  "robotics",
-        "slug":  "medical-nanobots-bloodstream"
-    },
-    {
-        "topic":  "El Impacto de los Superconductores a Temperatura Ambiente",
-        "category":  "tech",
-        "subcategory":  "materials",
-        "slug":  "room-temperature-superconductors-impact"
-    },
-    {
-        "topic":  "Grafeno y Nanotubos de Carbono para Ascensores Espaciales",
-        "category":  "tech",
-        "subcategory":  "materials",
-        "slug":  "graphene-nanotubes-space-elevators"
-    },
-    {
-        "topic":  "Metamateriales: Invisibilidad y ManipulaciÃ³n Ã“ptica Avanzada",
-        "category":  "tech",
-        "subcategory":  "materials",
-        "slug":  "metamaterials-optical-invisibility"
-    },
-    {
-        "topic":  "BaterÃ­as de Estado SÃ³lido y AltÃ­sima Densidad EnergÃ©tica",
-        "category":  "tech",
-        "subcategory":  "materials",
-        "slug":  "solid-state-batteries-high-density"
-    },
-    {
-        "topic":  "BioplÃ¡sticos Auto-reparables y Piel SintÃ©tica Sensorial",
-        "category":  "tech",
-        "subcategory":  "materials",
-        "slug":  "self-healing-bioplastics-synthetic-skin"
-    }
+  {
+    "topic": "Razonamiento AlgorÃ­tmico vs MemorizaciÃ³n en IA Actual",
+    "category": "ai",
+    "subcategory": "current-ai",
+    "slug": "algorithmic-reasoning-vs-memorization"
+  },
+  {
+    "topic": "El papel de los Agentes AutÃ³nomos Inteligentes",
+    "category": "ai",
+    "subcategory": "current-ai",
+    "slug": "intelligent-autonomous-agents"
+  },
+  {
+    "topic": "Escalamiento de ParÃ¡metros: Â¿Hemos tocado techo?",
+    "category": "ai",
+    "subcategory": "current-ai",
+    "slug": "parameter-scaling-ceiling"
+  },
+  {
+    "topic": "Test de Turing del Siglo XXI: Â¿CÃ³mo sabremos que es AGI?",
+    "category": "ai",
+    "subcategory": "agi",
+    "slug": "turing-test-21st-century-agi"
+  },
+  {
+    "topic": "Impacto EconÃ³mico Inmediato de la Inteligencia General",
+    "category": "ai",
+    "subcategory": "agi",
+    "slug": "economic-impact-general-intelligence"
+  },
+  {
+    "topic": "Arquitecturas Cognitivas mÃ¡s allÃ¡ de los Transformers",
+    "category": "ai",
+    "subcategory": "agi",
+    "slug": "cognitive-architectures-post-transformers"
+  },
+  {
+    "topic": "El Problema de la AlineaciÃ³n de Valores en AGI",
+    "category": "ai",
+    "subcategory": "agi",
+    "slug": "value-alignment-problem-agi"
+  },
+  {
+    "topic": "La AGI como Herramienta de InvestigaciÃ³n CientÃ­fica",
+    "category": "ai",
+    "subcategory": "agi",
+    "slug": "agi-scientific-research-tool"
+  },
+  {
+    "topic": "La ExplosiÃ³n de Inteligencia (Singularidad TecnolÃ³gica)",
+    "category": "ai",
+    "subcategory": "asi",
+    "slug": "intelligence-explosion-singularity"
+  },
+  {
+    "topic": "Control de Infraestructuras CrÃ­ticas por una ASI",
+    "category": "ai",
+    "subcategory": "asi",
+    "slug": "critical-infrastructure-control-asi"
+  },
+  {
+    "topic": "Dios MÃ¡quina: Perspectivas FilosÃ³ficas de la ASI",
+    "category": "ai",
+    "subcategory": "asi",
+    "slug": "machine-god-philosophy-asi"
+  },
+  {
+    "topic": "El Papel de la ASI en la ColonizaciÃ³n Interestelar",
+    "category": "ai",
+    "subcategory": "asi",
+    "slug": "asi-interstellar-colonization"
+  },
+  {
+    "topic": "Riesgos Existenciales de una ASI no alineada",
+    "category": "ai",
+    "subcategory": "asi",
+    "slug": "existential-risks-unaligned-asi"
+  },
+  {
+    "topic": "Almacenamiento de Datos Masivos en Cadenas de ADN",
+    "category": "ai",
+    "subcategory": "biocomputing",
+    "slug": "dna-data-storage"
+  },
+  {
+    "topic": "Cerebros en un Chip: Organoides Cerebrales Interactivos",
+    "category": "ai",
+    "subcategory": "biocomputing",
+    "slug": "brain-organoids-chip"
+  },
+  {
+    "topic": "Redes Neuronales OrgÃ¡nicas vs Redes de Silicio",
+    "category": "ai",
+    "subcategory": "biocomputing",
+    "slug": "organic-networks-vs-silicon"
+  },
+  {
+    "topic": "Interfaces HÃ­bridas: CÃ©lulas Vivas en Placas de Circuito",
+    "category": "ai",
+    "subcategory": "biocomputing",
+    "slug": "hybrid-interfaces-cells-circuits"
+  },
+  {
+    "topic": "El Futuro EcolÃ³gico de la ComputaciÃ³n BiolÃ³gica",
+    "category": "ai",
+    "subcategory": "biocomputing",
+    "slug": "ecological-future-biocomputing"
+  },
+  {
+    "topic": "La TransiciÃ³n CrÃ­tica del Tipo 0 al Tipo I",
+    "category": "kardashev",
+    "subcategory": "overview",
+    "slug": "critical-transition-type-0-type-1"
+  },
+  {
+    "topic": "Escala Microdimensional de Barrow (Inversa a Kardashov)",
+    "category": "kardashev",
+    "subcategory": "overview",
+    "slug": "barrow-scale-inverse-kardashev"
+  },
+  {
+    "topic": "Consumo EnergÃ©tico vs Eficiencia Computacional",
+    "category": "kardashev",
+    "subcategory": "overview",
+    "slug": "energy-consumption-vs-efficiency"
+  },
+  {
+    "topic": "El Ãndice de Sagan y las Fracciones TecnolÃ³gicas",
+    "category": "kardashev",
+    "subcategory": "overview",
+    "slug": "sagan-index-technological-fractions"
+  },
+  {
+    "topic": "FusiÃ³n Nuclear: El Santo Grial de la EnergÃ­a Limpia",
+    "category": "kardashev",
+    "subcategory": "type-1",
+    "slug": "nuclear-fusion-clean-energy"
+  },
+  {
+    "topic": "IngenierÃ­a ClimÃ¡tica: El Termostato Planetario Global",
+    "category": "kardashev",
+    "subcategory": "type-1",
+    "slug": "climate-engineering-global-thermostat"
+  },
+  {
+    "topic": "Redes ElÃ©ctricas Globales y TransmisiÃ³n InalÃ¡mbrica Orbital",
+    "category": "kardashev",
+    "subcategory": "type-1",
+    "slug": "global-grids-orbital-transmission"
+  },
+  {
+    "topic": "ExtracciÃ³n de EnergÃ­a GeotÃ©rmica a Escala Planetaria",
+    "category": "kardashev",
+    "subcategory": "type-1",
+    "slug": "planetary-geothermal-extraction"
+  },
+  {
+    "topic": "Enjambres de Dyson: La alternativa modular a la Esfera",
+    "category": "kardashev",
+    "subcategory": "type-2",
+    "slug": "dyson-swarms-modular-alternative"
+  },
+  {
+    "topic": "MinerÃ­a Estelar: ExtracciÃ³n directa de la Corona Solar",
+    "category": "kardashev",
+    "subcategory": "type-2",
+    "slug": "stellar-mining-solar-corona"
+  },
+  {
+    "topic": "Megatelescopios a Escala de Sistema Solar",
+    "category": "kardashev",
+    "subcategory": "type-2",
+    "slug": "megatelescopes-solar-system-scale"
+  },
+  {
+    "topic": "Redes de ComunicaciÃ³n GalÃ¡ctica mediante Entrelazamiento CuÃ¡ntico",
+    "category": "kardashev",
+    "subcategory": "type-3",
+    "slug": "galactic-communication-entanglement"
+  },
+  {
+    "topic": "Estrellas Artificiales y Reciclaje de Galaxias Muertas",
+    "category": "kardashev",
+    "subcategory": "type-3",
+    "slug": "artificial-stars-galaxy-recycling"
+  },
+  {
+    "topic": "Cerebros Matrioshka: ComputaciÃ³n a Nivel GalÃ¡ctico",
+    "category": "kardashev",
+    "subcategory": "type-3",
+    "slug": "matrioshka-brains-galactic-computing"
+  },
+  {
+    "topic": "TerraformaciÃ³n de Marte: Fase Inicial e IngenierÃ­a AtmosfÃ©rica",
+    "category": "kardashev",
+    "subcategory": "multiplanetary",
+    "slug": "mars-terraforming-initial-phase"
+  },
+  {
+    "topic": "Base Lunar Artemis: Plataforma de Salto al Cosmos",
+    "category": "kardashev",
+    "subcategory": "multiplanetary",
+    "slug": "artemis-lunar-base"
+  },
+  {
+    "topic": "Ciudades Flotantes en Venus: ColonizaciÃ³n AÃ©rea",
+    "category": "kardashev",
+    "subcategory": "multiplanetary",
+    "slug": "floating-cities-venus"
+  },
+  {
+    "topic": "ColonizaciÃ³n de Asteroides y Gravedad Rotacional",
+    "category": "kardashev",
+    "subcategory": "multiplanetary",
+    "slug": "asteroid-colonization-rotational-gravity"
+  },
+  {
+    "topic": "AnatomÃ­a de un Agujero Negro Supermasivo",
+    "category": "cosmos",
+    "subcategory": "celestial-mechanics",
+    "slug": "supermassive-black-hole-anatomy"
+  },
+  {
+    "topic": "CuÃ¡sares: Los Faros mÃ¡s Brillantes del Universo",
+    "category": "cosmos",
+    "subcategory": "celestial-mechanics",
+    "slug": "quasars-lighthouses-universe"
+  },
+  {
+    "topic": "El Misterio Insondable de la Materia Oscura",
+    "category": "cosmos",
+    "subcategory": "celestial-mechanics",
+    "slug": "dark-matter-mystery"
+  },
+  {
+    "topic": "ColisiÃ³n GalÃ¡ctica: El Destino de AndrÃ³meda y la VÃ­a LÃ¡ctea",
+    "category": "cosmos",
+    "subcategory": "celestial-mechanics",
+    "slug": "galactic-collision-andromeda-milky-way"
+  },
+  {
+    "topic": "Big Freeze: La Muerte TÃ©rmica del Universo",
+    "category": "cosmos",
+    "subcategory": "universe-fate",
+    "slug": "big-freeze-heat-death"
+  },
+  {
+    "topic": "Big Rip: El Desgarro Final del Espaciotiempo",
+    "category": "cosmos",
+    "subcategory": "universe-fate",
+    "slug": "big-rip-spacetime-tear"
+  },
+  {
+    "topic": "Decaimiento del VacÃ­o y la Burbuja de DestrucciÃ³n Verdadera",
+    "category": "cosmos",
+    "subcategory": "universe-fate",
+    "slug": "vacuum-decay-true-destruction-bubble"
+  },
+  {
+    "topic": "La Constante de Hubble y la ExpansiÃ³n Acelerada",
+    "category": "cosmos",
+    "subcategory": "universe-fate",
+    "slug": "hubble-constant-accelerated-expansion"
+  },
+  {
+    "topic": "El Sistema TRAPPIST-1 y sus Mundos OceÃ¡nicos TeÃ³ricos",
+    "category": "cosmos",
+    "subcategory": "exoplanets",
+    "slug": "trappist-1-system-ocean-worlds"
+  },
+  {
+    "topic": "Zonas Ricitos de Oro y el Peligro de la Excentricidad Orbital",
+    "category": "cosmos",
+    "subcategory": "exoplanets",
+    "slug": "goldilocks-zones-orbital-eccentricity"
+  },
+  {
+    "topic": "DetecciÃ³n de Biofirmas AtmosfÃ©ricas con el Telescopio James Webb",
+    "category": "cosmos",
+    "subcategory": "exoplanets",
+    "slug": "atmospheric-biosignatures-james-webb"
+  },
+  {
+    "topic": "Planetas Errantes (Rogue Planets) en la Oscuridad CÃ³smica",
+    "category": "cosmos",
+    "subcategory": "exoplanets",
+    "slug": "rogue-planets-cosmic-darkness"
+  },
+  {
+    "topic": "Vida basada en Silicio: Alternativas BioquÃ­micas al Carbono",
+    "category": "cosmos",
+    "subcategory": "xenobiology",
+    "slug": "silicon-life-carbon-alternative"
+  },
+  {
+    "topic": "OcÃ©anos Subsuperficiales en EncÃ©lado y Europa",
+    "category": "cosmos",
+    "subcategory": "xenobiology",
+    "slug": "subsurface-oceans-enceladus-europa"
+  },
+  {
+    "topic": "ExtremÃ³filos Terrestres como Modelos AlienÃ­genas",
+    "category": "cosmos",
+    "subcategory": "xenobiology",
+    "slug": "terrestrial-extremophiles-alien-models"
+  },
+  {
+    "topic": "Biosferas de Enanas Rojas y el Problema del Bloqueo Mareal",
+    "category": "cosmos",
+    "subcategory": "xenobiology",
+    "slug": "red-dwarf-biospheres-tidal-locking"
+  },
+  {
+    "topic": "La HipÃ³tesis de la Tierra Rara: Por quÃ© estamos solos",
+    "category": "theories",
+    "subcategory": "fermi",
+    "slug": "rare-earth-hypothesis"
+  },
+  {
+    "topic": "El Principio de Mediocridad y la EcuaciÃ³n de Drake Revisitada",
+    "category": "theories",
+    "subcategory": "fermi",
+    "slug": "mediocrity-principle-drake-equation"
+  },
+  {
+    "topic": "Civilizaciones Sumergidas y la HipÃ³tesis del Mundo AcuÃ¡tico",
+    "category": "theories",
+    "subcategory": "fermi",
+    "slug": "submerged-civilizations-water-world"
+  },
+  {
+    "topic": "HipÃ³tesis de la EstivaciÃ³n: Esperando la Era FrÃ­a del Universo",
+    "category": "theories",
+    "subcategory": "fermi",
+    "slug": "aestivation-hypothesis-waiting-cold-era"
+  },
+  {
+    "topic": "Armas Relativistas y la DestrucciÃ³n Mutua Asegurada a nivel CÃ³smico",
+    "category": "theories",
+    "subcategory": "dark-forest",
+    "slug": "relativistic-weapons-mutual-destruction"
+  },
+  {
+    "topic": "Cadenas de Sospecha y la ExplosiÃ³n TecnolÃ³gica Indetectable",
+    "category": "theories",
+    "subcategory": "dark-forest",
+    "slug": "chains-of-suspicion-technological-explosion"
+  },
+  {
+    "topic": "El Dilema del Prisionero a Escala GalÃ¡ctica",
+    "category": "theories",
+    "subcategory": "dark-forest",
+    "slug": "prisoner-dilemma-galactic-scale"
+  },
+  {
+    "topic": "TeorÃ­a del Gran Filtro: Â¿DetrÃ¡s o Delante de Nosotros?",
+    "category": "theories",
+    "subcategory": "great-filter",
+    "slug": "great-filter-behind-or-ahead"
+  },
+  {
+    "topic": "CatÃ¡strofes Inminentes: IA, Bioterrorismo y Riesgos Existenciales",
+    "category": "theories",
+    "subcategory": "great-filter",
+    "slug": "imminent-catastrophes-existential-risks"
+  },
+  {
+    "topic": "El Filtro de la Multicelularidad: El cuello de botella biolÃ³gico",
+    "category": "theories",
+    "subcategory": "great-filter",
+    "slug": "multicellularity-filter-bottleneck"
+  },
+  {
+    "topic": "Escapar de la Gravedad: El Planeta de Origen como Filtro CrÃ­tico",
+    "category": "theories",
+    "subcategory": "great-filter",
+    "slug": "escaping-gravity-home-planet-filter"
+  },
+  {
+    "topic": "La HipÃ³tesis de la SimulaciÃ³n: Â¿Es el Universo un CÃ³digo?",
+    "category": "theories",
+    "subcategory": "existential",
+    "slug": "simulation-hypothesis-universe-code"
+  },
+  {
+    "topic": "El Cerebro de Boltzmann y la IlusiÃ³n de la Existencia",
+    "category": "theories",
+    "subcategory": "existential",
+    "slug": "boltzmann-brain-illusion-existence"
+  },
+  {
+    "topic": "Inmortalidad CuÃ¡ntica y el Experimento de Wigner",
+    "category": "theories",
+    "subcategory": "existential",
+    "slug": "quantum-immortality-wigner-experiment"
+  },
+  {
+    "topic": "Solipsismo CÃ³smico y la Naturaleza Subjetiva de la Realidad",
+    "category": "theories",
+    "subcategory": "existential",
+    "slug": "cosmic-solipsism-subjective-reality"
+  },
+  {
+    "topic": "Agujeros de Gusano: Puentes de Einstein-Rosen IntergalÃ¡cticos",
+    "category": "theories",
+    "subcategory": "fringe-physics",
+    "slug": "wormholes-einstein-rosen-bridges"
+  },
+  {
+    "topic": "La TeorÃ­a de Cuerdas y las Dimensiones Ocultas",
+    "category": "theories",
+    "subcategory": "fringe-physics",
+    "slug": "string-theory-hidden-dimensions"
+  },
+  {
+    "topic": "El Multiverso y el Mecanismo de InflaciÃ³n Eterna",
+    "category": "theories",
+    "subcategory": "fringe-physics",
+    "slug": "multiverso-eternal-inflation"
+  },
+  {
+    "topic": "Motores Warp: Doblando la MÃ©trica de Alcubierre",
+    "category": "theories",
+    "subcategory": "fringe-physics",
+    "slug": "warp-drives-alcubierre-metric"
+  },
+  {
+    "topic": "SupremacÃ­a CuÃ¡ntica: El Fin inminente de la EncriptaciÃ³n ClÃ¡sica",
+    "category": "tech",
+    "subcategory": "quantum",
+    "slug": "quantum-supremacy-end-encryption"
+  },
+  {
+    "topic": "CriptografÃ­a Post-CuÃ¡ntica y Seguridad de Datos Futura",
+    "category": "tech",
+    "subcategory": "quantum",
+    "slug": "post-quantum-cryptography-security"
+  },
+  {
+    "topic": "SimulaciÃ³n Molecular Exacta para Curar Enfermedades Incurables",
+    "category": "tech",
+    "subcategory": "quantum",
+    "slug": "molecular-simulation-quantum-medicine"
+  },
+  {
+    "topic": "Internet CuÃ¡ntico y ComunicaciÃ³n Segura por Entrelazamiento",
+    "category": "tech",
+    "subcategory": "quantum",
+    "slug": "quantum-internet-entanglement"
+  },
+  {
+    "topic": "Neuralink y el Salto hacia la Lectura y Escritura Neuronal",
+    "category": "tech",
+    "subcategory": "neurotech",
+    "slug": "neuralink-neural-read-write"
+  },
+  {
+    "topic": "Transhumanismo y la FusiÃ³n Inevitable con la Inteligencia Artificial",
+    "category": "tech",
+    "subcategory": "neurotech",
+    "slug": "transhumanism-fusion-artificial-intelligence"
+  },
+  {
+    "topic": "CuraciÃ³n de ParÃ¡lisis mediante EstimulaciÃ³n Espinal Profunda",
+    "category": "tech",
+    "subcategory": "neurotech",
+    "slug": "paralysis-cure-spinal-stimulation"
+  },
+  {
+    "topic": "EdiciÃ³n de Memorias y Neuroplasticidad SintÃ©tica",
+    "category": "tech",
+    "subcategory": "neurotech",
+    "slug": "memory-editing-synthetic-neuroplasticity"
+  },
+  {
+    "topic": "TelepatÃ­a Digital: Resolviendo el Ancho de Banda Humano-MÃ¡quina",
+    "category": "tech",
+    "subcategory": "neurotech",
+    "slug": "digital-telepathy-bandwidth"
+  },
+  {
+    "topic": "Robots Humanoides de Consumo: El Despliegue de Optimus y Figure",
+    "category": "tech",
+    "subcategory": "robotics",
+    "slug": "consumer-humanoid-robots-optimus"
+  },
+  {
+    "topic": "Enjambres RobÃ³ticos y Algoritmos de Mentes Colmena",
+    "category": "tech",
+    "subcategory": "robotics",
+    "slug": "robotic-swarms-hive-minds"
+  },
+  {
+    "topic": "La AutomatizaciÃ³n Industrial 100% AutÃ³noma e Ininterrumpida",
+    "category": "tech",
+    "subcategory": "robotics",
+    "slug": "autonomous-industrial-automation"
+  },
+  {
+    "topic": "RobÃ³tica Blanda (Soft Robotics) Inspirada en la BiologÃ­a",
+    "category": "tech",
+    "subcategory": "robotics",
+    "slug": "soft-robotics-biology"
+  },
+  {
+    "topic": "Nanobots MÃ©dicos: ReparaciÃ³n Celular en el Torrente SanguÃ­neo",
+    "category": "tech",
+    "subcategory": "robotics",
+    "slug": "medical-nanobots-bloodstream"
+  },
+  {
+    "topic": "El Impacto de los Superconductores a Temperatura Ambiente",
+    "category": "tech",
+    "subcategory": "materials",
+    "slug": "room-temperature-superconductors-impact"
+  },
+  {
+    "topic": "Grafeno y Nanotubos de Carbono para Ascensores Espaciales",
+    "category": "tech",
+    "subcategory": "materials",
+    "slug": "graphene-nanotubes-space-elevators"
+  },
+  {
+    "topic": "Metamateriales: Invisibilidad y ManipulaciÃ³n Ã“ptica Avanzada",
+    "category": "tech",
+    "subcategory": "materials",
+    "slug": "metamaterials-optical-invisibility"
+  },
+  {
+    "topic": "BaterÃ­as de Estado SÃ³lido y AltÃ­sima Densidad EnergÃ©tica",
+    "category": "tech",
+    "subcategory": "materials",
+    "slug": "solid-state-batteries-high-density"
+  },
+  {
+    "topic": "BioplÃ¡sticos Auto-reparables y Piel SintÃ©tica Sensorial",
+    "category": "tech",
+    "subcategory": "materials",
+    "slug": "self-healing-bioplastics-synthetic-skin"
+  }
 ]
