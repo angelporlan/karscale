@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
 
 const copy = {
-  "es": {
-    "eyebrow": "Archivo Cosmos",
-    "title": "DetecciÃ³n de Biofirmas AtmosfÃ©ricas con el Telescopio James Webb",
-    "description": "Una visual animada para leer DetecciÃ³n de Biofirmas AtmosfÃ©ricas con el Telescopio James Webb desde Cosmos / Exoplanets.",
-    "badge": "Escaneo activo",
-    "metricA": "Señal",
-    "metricB": "Escala",
-    "metricC": "Horizonte",
-    "metricAValue": "1.0x",
-    "metricBValue": "Cosmos",
-    "metricCValue": "Exoplanets"
+  es: {
+    eyebrow: "Archivo Cosmos",
+    title: "Biofirmas atmosféricas con James Webb",
+    description:
+      "Un barrido espectral de atmósferas remotas, falsas señales y moléculas que podrían delatar biología planetaria.",
+    badge: "Escaneo activo",
+    metricA: "Firma",
+    metricB: "Método",
+    metricC: "Objetivo",
+    metricAValue: "Gases fuera de equilibrio",
+    metricBValue: "Espectroscopia de tránsito",
+    metricCValue: "Exoplanetas templados",
   },
-  "en": {
-    "eyebrow": "Cosmos archive",
-    "title": "DetecciÃ³n de Biofirmas AtmosfÃ©ricas con el Telescopio James Webb",
-    "description": "An animated visual for reading DetecciÃ³n de Biofirmas AtmosfÃ©ricas con el Telescopio James Webb through Cosmos / Exoplanets.",
-    "badge": "Active scan",
-    "metricA": "Signal",
-    "metricB": "Scale",
-    "metricC": "Horizon",
-    "metricAValue": "1.0x",
-    "metricBValue": "Cosmos",
-    "metricCValue": "Exoplanets"
-  }
+  en: {
+    eyebrow: "Cosmos archive",
+    title: "Atmospheric biosignatures with James Webb",
+    description:
+      "A spectral sweep through distant atmospheres, false signals, and molecules that could reveal planetary biology.",
+    badge: "Active scan",
+    metricA: "Signature",
+    metricB: "Method",
+    metricC: "Target",
+    metricAValue: "Disequilibrium gases",
+    metricBValue: "Transit spectroscopy",
+    metricCValue: "Temperate exoplanets",
+  },
 } as const;
 
 type Lang = "es" | "en";
@@ -51,7 +53,11 @@ function buildParticles(count: number): Particle[] {
   }));
 }
 
-export default function AtmosphericBiosignaturesJamesWebbVisual({ lang = "es" }: { lang?: Lang }) {
+export default function AtmosphericBiosignaturesJamesWebbVisual({
+  lang = "es",
+}: {
+  lang?: Lang;
+}) {
   const t = copy[lang] ?? copy.es;
   const [particles, setParticles] = useState<Particle[]>([]);
 
